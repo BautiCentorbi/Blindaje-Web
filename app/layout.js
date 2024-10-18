@@ -2,6 +2,7 @@ import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import NavBar from "./components/ui/NavBar";
 import { Hanken_Grotesk } from 'next/font/google'
+import Footer from "./components/ui/Footer";
 
 const HankenGrotesk = Hanken_Grotesk({subsets: ['latin']})
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <NextUIProvider>
           <NavBar />
           {children}
+          <Footer />
         </NextUIProvider>
       </body>
     </html>
