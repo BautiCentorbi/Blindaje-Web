@@ -10,7 +10,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        parallax: "url(/images/Parallax.png)"
+        parallax: "url(/images/Parallax.png)",
+        AboutParallax: "url(/images/AboutParallax.jpg)",
       },
       colors: {
         background: "var(--background)",

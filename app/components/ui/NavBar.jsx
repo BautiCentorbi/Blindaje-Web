@@ -44,7 +44,7 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  },);
 
   return (
     <Navbar

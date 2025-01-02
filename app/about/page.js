@@ -3,12 +3,10 @@ import React from 'react'
 
 const page = () => {
   return (
-    <main>
-      <Image 
-        src={'/'}
-        height={240}
-        width={1080}
-      />
+    <main className='relative h-screen'>
+      <div className='bg-AboutParallax bg-cover bg-fixed h-96 w-full paralax-bg'>
+        
+      </div>
     </main>
   )
 }

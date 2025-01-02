@@ -1,5 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import MainCarousell from "../carousell/MainCarousell";
+import InfiniteGraphicsLogo from "../icons/InfiniteGraphicsLogo";
+import InfiniteComputingLogo from "../icons/InfiniteComputingLogo";
+import InfiniteClothingLogo from "../icons/InfiniteClothingLogo";
 
 const MainSection = () => {
   return (
@@ -80,8 +84,35 @@ const MainSection = () => {
                 alt="Imágen de cámaras de seguridad vigilando."
                 width={844}
                 height={844}
+                className="rounded-2xl"
               />
             </picture>
+          </div>
+        </article>
+      </section>
+      <section className="w-[80%] mx-auto max-w-screen overflow-hidden text-white rounded-lg my-32">
+        <article className="flex flex-col w-full">
+          <figure className="relative w-full h-full">
+            <MainCarousell />
+          </figure>
+        </article>
+      </section>
+      <section className="">
+        <article className="flex flex-col w-full">
+          <div className="flex flex-col w-fit ">
+            <h2 className="text-6xl font-bold w-fit">¿Quiénes confían en nosotros?</h2>
+            <hr className="border-2 border-secondary my-4 w-full" />
+          </div>
+          <div className="flex items-center gap-8 justify-center">
+            <div className="w-56">
+              <InfiniteGraphicsLogo className={'fill-black w-8'} />
+            </div>
+            <div className="w-56">
+              <InfiniteComputingLogo className={'fill-[#7b341e] w-8'} />
+            </div>
+            <div className="w-56">
+              <InfiniteClothingLogo className={'fill-[#0f8bae] w-8'} />
+            </div>
           </div>
         </article>
       </section>
