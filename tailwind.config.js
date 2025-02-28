@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         parallax: "url(/images/Parallax.png)",
-        AboutParallax: "url(/images/AboutParallax.jpg)",
+        AboutParallax: "url(/images/Abt_Parallax.jpg)",
       },
       colors: {
         background: "var(--background)",

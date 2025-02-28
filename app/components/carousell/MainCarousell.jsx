@@ -32,15 +32,15 @@ const MainCarousell = () => {
                 key={i}
                 className={`${
                     i === activeImage
-                    ? 'block w-full h-auto object-cover transition-all duration-500 ease-in-out'
+                    ? 'block w-full h-96 object-cover transition-all duration-500 ease-in-out'
                     : 'transition hidden'
                 }`}
                 >
                     <Image 
                         src={img.src}
                         alt={img.description}
-                        height={1200}
-                        width={1200}
+                        layout='fill'
+                        objectFit='cover'
                         className='object-cover w-full h-full rounded-2xl'
                     />
                 </div>
