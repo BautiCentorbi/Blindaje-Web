@@ -28,6 +28,8 @@ module.exports = {
             background: '#ffffff',
             foreground: '#ffffff',
             primary: '#ad5613',
+            acc_primary: '#ff8e38',
+            lt_primary: '#ffa662',
             secondary: '#c75c0a',
           },
         },

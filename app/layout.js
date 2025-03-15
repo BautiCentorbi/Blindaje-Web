@@ -1,9 +1,10 @@
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
 import NavBar from "./components/ui/NavBar";
-import { Hanken_Grotesk } from 'next/font/google'
+import { Hanken_Grotesk, Abril_Fatface } from 'next/font/google'
 import Footer from "./components/ui/Footer";
 const HankenGrotesk = Hanken_Grotesk({subsets: ['latin']})
+const AbrilFatface = Abril_Fatface({subsets: ['latin'], weight: '400'})
 
 export const metadata = {
   title: "Blindaje - Seguridad Privada Integral",
@@ -14,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${HankenGrotesk.className}`}
+        className={`${HankenGrotesk.className} scroll-smooth`}
       >
         <NextUIProvider>
           <NavBar />
