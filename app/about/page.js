@@ -7,16 +7,16 @@ const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 const page = () => {
   return (
-    <main className="relative min-h-screen py-24 md:py-40">
-      <section className="flex flex-col items-center mx-80 gap-8" id="historia">
-        <h1 className="text-7xl max-w-3xl text-center dk:text-white">
-          Elevando tu seguridad a un
-          <span className={`${AbrilFatface.className} text-dk_primary`}>
+    <main className="relative min-h-screen py-24 md:py-40 max-w-screen overflow-hidden">
+      <section className="flex flex-col items-center mx-4 md:mx-80 md:gap-8" id="historia">
+        <h1 className="text-3xl max-w-4xl md:text-7xl md:max-w-3xl text-center dk:text-white">
+          Elevando tu seguridad<br className="md:hidden"/> a un
+          <span className={`${AbrilFatface.className} text-dk_primary text-4xl md:text-7xl`}>
             {" "}
             Nuevo Nivel
           </span>
         </h1>
-        <hr className="border-gray-200 border-1 opacity-20 my-8 w-64" />
+        <hr className="border-gray-600 border-1 opacity-20 my-8 w-36 md:w-64" />
         <GoalsSection/>
         <FocusSection/>
         <iframe
