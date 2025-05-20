@@ -38,7 +38,7 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            className="mt-2 md:mt-4 uppercase font-extrabold text-2xl md:text-5xl lg:text-7xl text-dk_primary"
+            className="mt-2 md:mt-4 uppercase font-extrabold text-4xl md:text-5xl lg:text-7xl text-dk_primary"
           >
             Protección
             <br /> personalizada
