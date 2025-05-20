@@ -5,7 +5,7 @@ const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 const FocusSection = () => {
   return (
-    <article className="bg-black/20 flex flex-col gap-8 text-lg mx-36 p-24 rounded-xl" id="enfoque">
+    <article className="flex flex-col gap-8 text-lg mx-36 p-24 rounded-xl" id="enfoque">
       <h2 className={`${AbrilFatface.className} text-4xl text-center mb-8`}>
         Nuestro enfoque se basa en{" "}
         <span className="text-dk_primary">tres pilares:</span>

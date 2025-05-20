@@ -7,11 +7,11 @@ const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 const page = () => {
   return (
-    <main className="relative min-h-screen py-40">
+    <main className="relative min-h-screen py-24 md:py-40">
       <section className="flex flex-col items-center mx-80 gap-8" id="historia">
-        <h1 className="text-7xl max-w-3xl text-center text-white">
+        <h1 className="text-7xl max-w-3xl text-center dk:text-white">
           Elevando tu seguridad a un
-          <span className={`${AbrilFatface.className} text-lt_primary`}>
+          <span className={`${AbrilFatface.className} text-dk_primary`}>
             {" "}
             Nuevo Nivel
           </span>

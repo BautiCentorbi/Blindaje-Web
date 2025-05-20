@@ -2,7 +2,7 @@ import React from "react";
 
 const GoalsSection = () => {
   return (
-    <article className="text-white px-60 flex flex-col items-center gap-8 text-lg" id="objetivos">
+    <article className="dk:text-white px-60 flex flex-col items-center gap-8 text-lg" id="objetivos">
       <p>
         En un mundo que avanza a toda velocidad, la{" "}
         <span className="underline font-bold">tranquilidad</span> es un lujo que

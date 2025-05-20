@@ -13,7 +13,7 @@ module.exports = {
         AboutParallax: "url(/images/Abt_Parallax.jpg)",
       },
       colors: {
-        dk_primary: "#D07128",
+        dk_primary: "#ef781d",
         lt_primary: "#ffa662",
         accent: "#ff8e38",
         secondary: "#c75c0a",
