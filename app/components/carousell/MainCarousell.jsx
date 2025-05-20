@@ -1,6 +1,5 @@
 'use client'
 import { images } from '@/app/constants/Images'
-import { Button, Skeleton } from '@nextui-org/react'
 import Image from 'next/image'
 import React, { Suspense, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -36,12 +35,12 @@ const MainCarousell = () => {
                     : 'transition hidden'
                 }`}
                 >
-                    <Suspense fallback={<Skeleton />}>
+                    <Suspense fallback={<div>Loading...</div>}>
                         <Image 
                             src={img.src}
                             alt={img.description}
-                            layout='fill'
-                            objectFit='cover'
+                            width={500}
+                            height={500}
                             className='object-cover w-full h-full rounded-2xl'
                         />
                     </Suspense>

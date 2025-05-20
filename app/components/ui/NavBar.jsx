@@ -1,127 +1,208 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  Button,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-} from "@nextui-org/react";
-import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 const NavBar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const navItems = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Nosotros",
-      href: "/about",
-    },
-    {
-      label: "Servicios",
-      href: "/services",
-    },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const position = window.pageYOffset;
-      setScrollPosition(position);
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  },);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isActive = (href) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
-    <Navbar
-      dark
-      className={`fixed w-full transition-colors duration-300 ${
-        scrollPosition > 50 ? "bg-gray-800" : "bg-transparent"
-      } backdrop-blur`}
-      onMenuOpenChange={setToggleMenu}
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md",
+        scrolled ? "bg-background/80" : "bg-transparent"
+      )}
     >
-      <NavbarBrand>
-        <Link href={"/"}>
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <Image
-            src={"/images/BN_Logo_Blindaje.svg"}
+            src="/images/Isotipo_Blindaje.svg"
+            alt="Logo Blindaje"
             width={64}
             height={64}
+          />
+          <Image
+            src="/images/Logotipo_Blindaje.svg"
             alt="Logo Blindaje"
+            width={156}
+            height={64}
           />
         </Link>
-      </NavbarBrand>
-      <NavbarContent justify="center" className="hidden md:flex gap-8">
-        {navItems.map((item) => (
-          <NavbarItem key={item.label}>
+
+        {/* Desktop Menu */}
+        <div className="hidden md:block">
+          <NavigationMenu>
+            <NavigationMenuList className="flex gap-6 text-base items-center">
+              {/* Home */}
+              <NavigationMenuItem>
+                <Link href="/" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      isActive("/") &&
+                        "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+                    )}
+                  >
+                    Home
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              {/* Nosotros */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    isActive("/about") &&
+                      "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+                  )}
+                >
+                  <Link href="/about">Nosotros</Link>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-2 p-4 w-56">
+                    <li>
+                      <Link
+                        href="/about#historia"
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Nuestra Historia
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about#objetivos"
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        Objetivos
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/about#porque-elegirnos"
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        ¿Por qué elegirnos?
+                      </Link>
+                    </li>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Servicios */}
+              <NavigationMenuItem>
+                <Link href="/services" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      isActive("/services") &&
+                        "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+                    )}
+                  >
+                    Servicios
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              {/* Contacto */}
+              <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      isActive("/contact") &&
+                        "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+                    )}
+                  >
+                    Contacto
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-primary"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div className="md:hidden bg-background px-6 py-4 space-y-4 text-base animate-slide-down">
+          <Link href="/" onClick={() => setMobileOpen(false)} className="block">
+            Home
+          </Link>
+          <Link href="/about" onClick={() => setMobileOpen(false)} className="block">
+            Nosotros
+          </Link>
+          <div className="pl-4 space-y-1">
             <Link
-              className={`transition border-b-2 border-transparent flex h-full text-xl text-center hover:border-white ${
-                pathname === item.href.toLowerCase()
-                  ? "border-b-secondary font-bold hover:border-b-secondary"
-                  : ""
-              }`}
-              href={item.href}
+              href="/about#historia"
+              onClick={() => setMobileOpen(false)}
+              className="block"
             >
-              {item.label}
+              Nuestra Historia
             </Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
-      <NavbarMenuToggle
-        aria-label={toggleMenu ? "Close menu" : "Open menu"}
-        className="sm:hidden"
-      />
-      <NavbarMenu className="flex">
-        {navItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === navItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href={item.href}
-              size="lg"
+              href="/about#objetivos"
+              onClick={() => setMobileOpen(false)}
+              className="block"
             >
-              {item.label}
+              Objetivos
             </Link>
-          </NavbarMenuItem>
-        ))}
-        <NavbarMenuItem>
-          <Link className="w-full" href={"/contact"} size="lg">
+            <Link
+              href="/about#porque-elegirnos"
+              onClick={() => setMobileOpen(false)}
+              className="block"
+            >
+              ¿Por qué elegirnos?
+            </Link>
+          </div>
+          <Link href="/services" onClick={() => setMobileOpen(false)} className="block">
+            Servicios
+          </Link>
+          <Link href="/contact" onClick={() => setMobileOpen(false)} className="block">
             Contacto
           </Link>
-        </NavbarMenuItem>
-        <NavbarContent
-          justify="end"
-          className="text-slate-400 flex flex-col gap-0"
-        >
-          <span>® Blindaje 2024</span>
-          <p>Todos los derechos reservados</p>
-        </NavbarContent>
-      </NavbarMenu>
-      <NavbarContent className="hidden md:flex" justify="end">
-        <Button className="font-medium" color="primary">
-            Contacto
-        </Button>
-      </NavbarContent>
-    </Navbar>
+        </div>
+      )}
+    </header>
   );
 };
 

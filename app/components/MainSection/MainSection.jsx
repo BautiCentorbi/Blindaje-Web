@@ -1,29 +1,25 @@
 import React from "react";
 import Image from "next/image";
 import MainCarousell from "../carousell/MainCarousell";
-import InfiniteGraphicsLogo from "../icons/InfiniteGraphicsLogo";
-import InfiniteComputingLogo from "../icons/InfiniteComputingLogo";
-import InfiniteClothingLogo from "../icons/InfiniteClothingLogo";
 import * as motion from "motion/react-client";
 
 const MainSection = () => {
   return (
-    <main className="bg-gradient-to-t from-black to-background text-white px-48 py-24">
-      <motion.section  viewport={{ once: true }} layout whileInView={{ opacity: 1, x: 0 }} initial={{ opacity: 0, x: -400 }} >
+    <main className=" dk:text-white px-8 md:px-48 py-8 md:py-24">
+      <section>
         <article className="flex flex-col gap-4">
           <div className="flex flex-col w-fit">
-            <h2 className="text-6xl font-bold w-fit">¿Por qué elegirnos?</h2>
-            <hr className="border-2 border-secondary my-4 w-full" />
+            <h2 className="text-3xl md:text-6xl font-bold w-fit">¿Por qué elegirnos?</h2>
+            <hr className="border-2 border-dk_primary my-2 md:my-4 w-full" />
           </div>
-          <div className="flex flex-row gap-16 items-center">
-            <ul className="text-lg flex flex-col gap-4">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <ul className="text-md md:text-lg flex flex-col gap-4">
               Nos dedicamos a ofrecer soluciones integrales para la protección de lo que más te importa. Aquí te contamos por qué somos la mejor opción:
               <div className="flex gap-4 items-center">
                 <svg
-                  className="fill-primary"
+                  className="fill-dk_primary w-8 h-8 md:inline hidden"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  style={{objectFit: "contain"}}
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
@@ -35,10 +31,9 @@ const MainSection = () => {
               </div>
               <div className="flex gap-4 items-center">
                 <svg
-                  className="fill-primary"
+                  className="fill-dk_primary w-8 h-8 md:inline hidden"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  style={{objectFit: "contain"}}
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
@@ -50,10 +45,8 @@ const MainSection = () => {
               </div>
               <div className="flex gap-4 items-center">
                 <svg
-                  className="fill-primary"
+                  className="fill-dk_primary w-8 h-8 md:inline hidden"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
@@ -65,10 +58,9 @@ const MainSection = () => {
               </div>
               <div className="flex gap-4 items-center">
                 <svg
-                  className="fill-primary"
+                  className="fill-dk_primary w-8 h-8 md:inline hidden"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  style={{objectFit: "contain"}}
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
@@ -85,30 +77,20 @@ const MainSection = () => {
                 alt="Imágen de cámaras de seguridad vigilando."
                 width={844}
                 height={844}
-                className="rounded-2xl"
+                className="rounded-2xl md:inline hidden"
               />
             </picture>
           </div>
         </article>
-      </motion.section>
-      <section className="w-[80%] mx-auto max-w-screen overflow-hidden text-white rounded-lg my-32">
+      </section>
+      <section className="mx-auto max-w-screen overflow-hidden text-white rounded-lg my-32">
         <article className="flex flex-col w-full">
           <figure className="relative w-full h-full">
             <MainCarousell />
           </figure>
         </article>
       </section>
-      <section className="">
-        <article className="flex flex-col w-full">
-          <div className="flex flex-col w-fit ">
-            <h2 className="text-6xl font-bold w-fit">¿Quiénes confían en nosotros?</h2>
-            <hr className="border-2 border-secondary my-4 w-full" />
-          </div>
-          <div className="flex items-center gap-8 justify-center">
-            
-          </div>
-        </article>
-      </section>
+      
     </main>
   );
 };
