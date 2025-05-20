@@ -51,12 +51,14 @@ const NavBar = () => {
             alt="Logo Blindaje"
             width={64}
             height={64}
+            className=""
           />
           <Image
             src="/images/Logotipo_Blindaje.svg"
             alt="Logo Blindaje"
             width={156}
             height={64}
+            className="hidden md:block"
           />
         </Link>
 
