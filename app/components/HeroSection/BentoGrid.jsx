@@ -9,7 +9,7 @@ import { ShieldCheck, Users, Eye, Headphones, Instagram, Linkedin, Phone } from 
 const bentoItems = [
   {
     id: 1,
-    className: "col-span-6 row-span-3",
+    className: "col-span-6 row-span-3 shadow-md shadow-black/15",
     content: (
       <div className="flex flex-col justify-start h-full p-8 gap-12 text-white bg-[#222222] rounded-2xl">
         <ShieldCheck className="w-24 h-24" />
@@ -36,7 +36,7 @@ const bentoItems = [
   },
   {
     id: 3,
-    className: "col-span-3 row-span-2 bg-gray-800 text-white",
+    className: "col-span-3 row-span-2 bg-gray-800 text-white shadow-md shadow-black/20",
     content: (
       <div className="h-full w-full flex items-center justify-center p-4 rounded-2xl bg-[#666666]">
         <p className="text-xl font-medium text-center">
@@ -47,7 +47,7 @@ const bentoItems = [
   },
   {
     id: 4,
-    className: "col-span-1 row-span-1 bg-dk_primary text-white",
+    className: "col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://wa.me/5492613833783"
@@ -62,7 +62,7 @@ const bentoItems = [
   {
     id: 5,
     className:
-      "col-span-1 row-span-1 bg-dk_primary text-white",
+      "col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://instagram.com/blindaje_ar"
@@ -76,7 +76,7 @@ const bentoItems = [
   },
   {
     id: 6,
-    className: "col-span-1 row-span-1 bg-dk_primary text-white",
+    className: "col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://linkedin.com/in/tuusuario"
