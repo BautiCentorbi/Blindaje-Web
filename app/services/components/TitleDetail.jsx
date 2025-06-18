@@ -16,7 +16,7 @@ const TitleDetail = ({text}) => {
           <rect x="25" y="0" width="5" height="40" fill="white" />
 
           {/* Cuerpo gris con corte izquierdo y derecho */}
-          <polygon points="30,0 445,0 435,20 445,40 25,40" fill="#575757" />
+          <polygon points="30,0 445,0 465,20 445,40 25,40" fill="#575757" />
 
           {/* Texto */}
           <text
