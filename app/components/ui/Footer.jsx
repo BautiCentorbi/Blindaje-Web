@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
             <hr className='border-slate-600 hidden md:flex md:w-48'/>
         </div>
-        <span className='text-slate-500 text-center text-sm md:text-lg'>Blindaje® 2024 - Todos los derechos reservados</span>
+        <span className='text-slate-500 text-center text-sm md:text-lg'>Blindaje® 2025 - Todos los derechos reservados</span>
     </footer>
   )
 }

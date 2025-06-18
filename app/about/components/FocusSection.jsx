@@ -10,7 +10,7 @@ const FocusSection = () => {
         Nuestro enfoque se basa en{" "}
         <span className={`${AbrilFatface.className} text-dk_primary`}>Tres Pilares:</span>
       </h2>
-      <p>
+      <p className="text-justify">
         <span className="uppercase text-dk_primary font-bold text-xl block">
           Prevención:
         </span>
@@ -21,7 +21,7 @@ const FocusSection = () => {
         para el personal, trabajamos para anticiparnos a cualquier amenaza y
         garantizar que tu tranquilidad no sea interrumpida.
       </p>
-      <p>
+      <p className="text-justify">
         <span className="uppercase text-dk_primary font-bold text-xl block">
           Innovación:
         </span>
@@ -32,7 +32,7 @@ const FocusSection = () => {
         inteligentes, nuestra prioridad es brindarte herramientas modernas que
         ofrezcan máxima eficacia y sean fáciles de usar.
       </p>
-      <p>
+      <p className="text-justify">
         <span className="uppercase text-dk_primary font-bold text-xl block">
           Cercanía:
         </span>

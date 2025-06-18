@@ -3,6 +3,8 @@ import Image from "next/image";
 import BentoGrid from "./BentoGrid";
 import Link from "next/link";
 import * as motion from "motion/react-client";
+import MainButton from "../ui/MainButton.jsx";
+import SecondaryButton from "../ui/SecondaryButton";
 
 const Hero = () => {
   return (
@@ -63,34 +65,23 @@ const Hero = () => {
           </motion.p>
           <div className="flex flex-col md:flex-row gap-4 transition">
             <Link href={"/contact"}>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
-                whileTap={{ scale: 0.97 }}
-                aria-label="Solicitá una cotización"
-                className="shadow-xl shadow-dk_primary/20 w-full bg-dk_primary dark:text-black text-white px-6 py-3 text-sm md:text-lg rounded-xl font-semibold hover:bg-dk_primary/80 transition-colors"
-              >
-                Solicitá una cotización
-              </motion.button>
+              <MainButton
+                ariaLabel="Solicitá una cotización"
+                label="Solicitá una cotización"
+              />
             </Link>
             <Link href={"/about"}>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
-                whileTap={{ scale: 0.97 }}
-                aria-label="Conocé más sobre nosotros"
-                className="shadow-lg shadow-dark/10 w-full px-6 py-3 text-sm md:text-lg rounded-xl dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors"
+              <SecondaryButton
+                ariaLabel="Conocé sobre nosotros"
+                label="Conocé sobre nosotros"
               >
-                Conocé sobre nosotros
                 <svg
                   className="fill-gray-500 w-6 h-6 md:inline hidden"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
-              </motion.button>
+              </SecondaryButton>
             </Link>
           </div>
           <div className="pt-4 md:pt-8 flex flex-wrap justify-center md:justify-start gap-4">

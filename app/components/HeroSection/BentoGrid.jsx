@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import CarouselBento from "./BentoCarousel.jsx";
 import { ShieldCheck, Users, Eye, Headphones, Instagram, Linkedin, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const bentoItems = [
   {
@@ -38,10 +39,10 @@ const bentoItems = [
     id: 3,
     className: "col-span-3 row-span-2 bg-gray-800 text-white shadow-md shadow-black/20",
     content: (
-      <div className="h-full w-full flex items-center justify-center p-4 rounded-2xl bg-[#666666]">
-        <p className="text-xl font-medium text-center">
-          Cobertura en todo Cuyo
-        </p>
+      <div className="h-full w-full flex flex-col items-start justify-center p-4 rounded-2xl bg-[#666666]">
+        <h2 className="text-2xl font-medium text-center ">
+          Protección a medida para tu tranquilidad
+        </h2>
       </div>
     ),
   },
@@ -55,7 +56,7 @@ const bentoItems = [
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-colors"
       >
-        <Phone className="w-6 h-6" />
+        <FaWhatsapp className="w-7 h-7" />
       </a>
     ),
   },
