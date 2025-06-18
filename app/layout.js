@@ -1,9 +1,12 @@
 import "./globals.css";
 import NavBar from "./components/ui/NavBar";
-import { Hanken_Grotesk, Abril_Fatface } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import Footer from "./components/ui/Footer";
-const HankenGrotesk = Hanken_Grotesk({ subsets: ["latin"] });
-const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
+
+const HankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata = {
   title: "Blindaje - Seguridad Privada Integral",
