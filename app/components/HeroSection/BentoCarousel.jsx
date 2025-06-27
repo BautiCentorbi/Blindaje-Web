@@ -30,15 +30,13 @@ export default function CarouselBento() {
           transition={{ duration: 0.6 }}
           className="absolute w-full h-full flex items-center justify-center"
         >
-          <div className="text-center">
-            <Image
-              src={slides[index].image}
-              alt={slides[index].title}
-              width={300}
-              height={200}
-              className="mx-auto mb-4 object-contain"
-            />
-          </div>
+          <Image
+            src={slides[index].image}
+            alt={slides[index].title}
+            width={400}
+            height={400}
+            className="w-full h-full object-contain"
+          />
         </motion.div>
       </AnimatePresence>
     </div>

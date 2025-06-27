@@ -12,8 +12,8 @@ const bentoItems = [
     id: 1,
     className: "col-span-6 row-span-3 shadow-md shadow-black/15",
     content: (
-      <div className="flex flex-col justify-start h-full p-8 gap-12 text-white bg-[#222222] rounded-2xl">
-        <ShieldCheck className="w-24 h-24" />
+      <div className="flex flex-col justify-end md:justify-start h-full md:h-full p-8 gap-12 text-white bg-[#222222] rounded-2xl">
+        <ShieldCheck className="w-12 md:w-24 h-12 md:h-24" />
         <div>
             <h2 className="text-xl md:text-2xl font-black">
             Servicio de seguridad integral
@@ -23,12 +23,11 @@ const bentoItems = [
             </p>
         </div>
       </div>
-            
     ),
   },
   {
     id: 2,
-    className: "col-span-3 row-span-2 md:row-span-3 shadow-xl shadow-black/15 bg-[#f2f4f2] dk:text-white",
+    className: "col-span-6 md:col-span-3 row-span-2 md:row-span-3 shadow-xl shadow-black/15 bg-[#f2f4f2] dk:text-white",
     content: (
       <div className="h-full w-full flex flex-col items-center justify-center p-4 rounded-2xl">
         <CarouselBento />
@@ -37,7 +36,7 @@ const bentoItems = [
   },
   {
     id: 3,
-    className: "col-span-3 row-span-2 bg-gray-800 text-white shadow-md shadow-black/20",
+    className: "col-span-6 md:col-span-3 row-span-2 bg-gray-800 text-white shadow-md shadow-black/20",
     content: (
       <div className="h-full w-full flex flex-col items-start justify-center p-4 rounded-2xl bg-[#666666]">
         <h2 className="text-2xl font-medium text-center ">
@@ -48,7 +47,7 @@ const bentoItems = [
   },
   {
     id: 4,
-    className: "col-span-2 md:col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
+    className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://wa.me/5492613833783"
@@ -63,7 +62,7 @@ const bentoItems = [
   {
     id: 5,
     className:
-      "col-span-2 md:col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
+      "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://instagram.com/blindaje_ar"
@@ -77,7 +76,7 @@ const bentoItems = [
   },
   {
     id: 6,
-    className: "col-span-2 md:col-span-1 row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
+    className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
         href="https://linkedin.com/in/tuusuario"
@@ -107,9 +106,9 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section className="w-full h-full md:h-[100vh] px-6 py-32">
+    <section className="w-full h-full md:h-[100vh] px-6 py-12 md:py-32">
       <motion.div
-        className="grid grid-cols-6 grid-rows-6 gap-4 h-full max-w-7xl mx-auto"
+        className="grid grid-cols-6 grid-rows-6 gap-4 h-fit max-w-7xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         animate="show"
