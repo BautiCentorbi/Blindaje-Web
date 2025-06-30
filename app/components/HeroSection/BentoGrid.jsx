@@ -12,8 +12,8 @@ const bentoItems = [
     id: 1,
     className: "col-span-6 row-span-3 shadow-md shadow-black/15",
     content: (
-      <div className="flex flex-col justify-end md:justify-start h-full md:h-full p-8 gap-12 text-white bg-[#222222] rounded-2xl">
-        <ShieldCheck className="w-12 md:w-24 h-12 md:h-24" />
+      <div className="flex flex-col justify-end md:justify-start h-full p-8 gap-4 2xl:gap-12 text-white bg-[#222222] rounded-2xl">
+        <ShieldCheck className="w-12 md:w-18 2xl:w-24 h-12 md:h-18 2xl:h-24" />
         <div>
             <h2 className="text-xl md:text-2xl font-black">
             Servicio de seguridad integral
@@ -106,7 +106,7 @@ const itemVariants = {
 
 const Hero = () => {
   return (
-    <section className="w-full h-full md:h-[100vh] px-6 py-12 md:py-32">
+    <section className="w-full h-full px-6 py-12 md:py-0">
       <motion.div
         className="grid grid-cols-6 grid-rows-6 gap-4 h-fit max-w-7xl mx-auto"
         variants={containerVariants}

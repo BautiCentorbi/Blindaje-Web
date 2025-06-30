@@ -43,12 +43,12 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="mt-32 px-4 sm:px-8 max-w-3xl mx-auto w-full">
+    <section className="py-20 md:py-12 2xl:py-28 px-4 sm:px-8 max-w-3xl mx-auto w-full">
       <motion.h2
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`text-center text-4xl md:text-4xl lg:text-5xl font-extrabold mb-6`}
+        className={`text-center text-4xl md:text-4xl 2xl:text-5xl font-extrabold mb-6`}
       >
         <span className={`${AbrilFatface.className}  text-dk_primary `}>
           Sumate{" "}
@@ -63,28 +63,26 @@ const ContactForm = () => {
         transition={{ duration: 0.6 }}
         className="bg-white dark:bg-zinc-900 shadow-xl rounded-2xl p-8 space-y-6 gap-8"
       >
-        <div>
-          <div className="flex flex-col gap-2 mb-4">
-            <label className="text-sm font-semibold">Nombre</label>
-            <input
-              name="nombre"
-              placeholder="Juan"
-              required
-              className="h-10 p-4 rounded-lg bg-gray-100"
-            />
-          </div>
-          <div className="flex flex-col gap-2 mb-4">
-            <label className="text-sm font-semibold">Apellido</label>
-            <input
-              name="apellido"
-              placeholder="Doe"
-              required
-              className="h-10 p-4 rounded-lg bg-gray-100"
-            />
-          </div>
+        <div className="flex flex-col gap-2 mb-4 md:mb-4 2xl:mb-4">
+          <label className="text-sm font-semibold">Nombre</label>
+          <input
+            name="nombre"
+            placeholder="Juan"
+            required
+            className="h-10 p-4 rounded-lg bg-gray-100"
+          />
+        </div>
+        <div className="flex flex-col gap-2 mb- md:mb-2 2xl:mb-4">
+          <label className="text-sm font-semibold">Apellido</label>
+          <input
+            name="apellido"
+            placeholder="Doe"
+            required
+            className="h-10 p-4 rounded-lg bg-gray-100"
+          />
         </div>
 
-        <div className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
           <label className="text-sm font-semibold">Asunto</label>
           <input
             name="mensaje"
@@ -94,7 +92,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
           <label className="text-sm font-semibold">Mensaje</label>
           <textarea
             name="mensaje"
@@ -117,7 +115,10 @@ const ContactForm = () => {
             className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-1 file:border-dk_primary file:bg-gray-100 click:file:bg-dk_primary"
           />
         </div>
-        <MainButton label={loading ? "Enviando..." : "Enviar →"} ariaLabel="Enviar el formulario" />
+        <MainButton
+          label={loading ? "Enviando..." : "Enviar →"}
+          ariaLabel="Enviar el formulario"
+        />
       </motion.form>
 
       <ReCAPTCHA

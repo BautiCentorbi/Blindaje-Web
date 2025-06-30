@@ -4,13 +4,13 @@ import TitleDetail from "./TitleDetail";
 
 const MainSection = () => {
   return (
-    <section className="min-h-screen mt-8 md:mt-16 flex flex-col items-center px-4 md:px-60">
-      <div className="">
+    <section className="min-h-screen mt-8 2xl:mt-12 flex flex-col items-center px-4 md:px-60">
+      <div className="2xl:max-w-[700px] md:max-w-[550px]">
         <Image src={"/images/Services-Steps.svg"} height={120} width={700} />
       </div>
       <article className="flex flex-col gap-12 my-4 md:my-8">
         <div className="flex flex-col gap-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center items-center flex flex-col">
+          <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center items-center flex flex-col">
             Análisis de Riesgos
             <hr className="border-dk_primary border-2 my-2 w-36 md:w-64" />
           </h2>
@@ -145,7 +145,7 @@ const MainSection = () => {
             </div>
           </div>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-center items-center flex flex-col">
+        <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center items-center flex flex-col">
             Seguridad Física
             <hr className="border-dk_primary border-2 my-2 w-36 md:w-64" />
           </h2>
@@ -327,7 +327,7 @@ const MainSection = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center items-center flex flex-col">
+          <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center items-center flex flex-col">
             Seguridad Electrónica
             <hr className="border-dk_primary border-2 my-2 w-36 md:w-64" />
           </h2>
@@ -511,7 +511,7 @@ const MainSection = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center items-center flex flex-col">
+          <h2 className="text-2xl md:text-3xl 2xl:text-4xl font-bold text-center items-center flex flex-col">
             Asesoramiento y Consultoría
             <hr className="border-dk_primary border-2 my-2 w-36 md:w-64" />
           </h2>

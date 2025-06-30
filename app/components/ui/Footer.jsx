@@ -4,7 +4,7 @@ import {FaInstagram, FaFacebook, FaLinkedin, FaWhatsapp} from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-full items-center pt-8 md:pt-12 pb-2 md:pb-4 px-8 md:px-24 gap-4 md:gap-8 bg-gray-100">
+    <footer className="flex flex-col w-full items-center pt-8 md:pt-10 2xl:pt-12 pb-2 md:pb-4 px-8 md:px-24 gap-4 md:gap-8 bg-gray-100">
         <div>
             <Link href={'/'}>
                 <Image 

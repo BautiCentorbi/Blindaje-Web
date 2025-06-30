@@ -8,7 +8,7 @@ import SecondaryButton from "../ui/SecondaryButton";
 
 const Hero = () => {
   return (
-    <section className="w-full h-full md:h-screen dark:text-white text-black flex items-center justify-center py-24 px-6 md:px-12 lg:px-24">
+    <section className="w-full h-full dark:text-white text-black flex items-center justify-center mt-20 md:my-20 2xl:mt-40 px-6 md:px-12 lg:px-24">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -20,17 +20,17 @@ const Hero = () => {
             },
           },
         }}
-        className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 md:gap-12 items-center"
+        className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 md:gap-12 items-center justify-center"
       >
         {/* Izquierda - Texto */}
-        <div className="space-y-6">
+        <div className="gap-6">
           <motion.h2
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col text-xl md:text-3xl lg:text-4xl leading-tight"
+            className="flex flex-col text-xl md:text-3xl 2xl:text-4xl leading-tight"
           >
             Redefinimos lo que significa
           </motion.h2>
@@ -40,7 +40,7 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            className="mt-2 md:mt-4 uppercase font-extrabold text-4xl md:text-5xl lg:text-7xl text-dk_primary"
+            className="mt-2 md:mt-4 uppercase font-extrabold text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-dk_primary"
           >
             Protección
             <br /> personalizada
@@ -55,7 +55,7 @@ const Hero = () => {
               ease: "easeOut",
               delay: 0.3,
             }}
-            className="pt-2 md:pt-12 text-lg dark:text-gray-400 text-gray-600 max-w-lg"
+            className="pt-2 md:pt-8 2xl:pt-12 text-lg dark:text-gray-400 text-gray-600 max-w-lg"
           >
             En un mundo que avanza a toda velocidad, la{" "}
             <span className="font-extrabold">tranquilidad</span> es un lujo que
@@ -63,7 +63,7 @@ const Hero = () => {
             <span className="font-extrabold">redefinir</span> lo que significa
             este concepto.
           </motion.p>
-          <div className="flex flex-col md:flex-row gap-4 transition">
+          <div className="flex flex-col md:flex-row gap-4 my-6 transition">
             <Link href={"/contact"}>
               <MainButton
                 ariaLabel="Solicitá una cotización"

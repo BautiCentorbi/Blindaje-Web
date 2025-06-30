@@ -7,10 +7,10 @@ const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 const ServicesPage = () => {
   return (
-    <main className='min-h-screen mt-28 md:mt-32 flex flex-col items-center mx-4 md:mx-40'>
-      <h1 className="text-3xl max-w-4xl md:text-5xl md:max-w-3xl text-center dk:text-white">
+    <main className='min-h-screen my-20 md:my-32 flex flex-col items-center mx-4 md:mx-18 2xl:mx-40'>
+      <h1 className="text-3xl max-w-4xl md:text-4xl 2xl:text-5xl md:max-w-3xl text-center dk:text-white">
           Seguridad<br className="md:hidden"/> Privada
-          <span className={`${AbrilFatface.className} text-dk_primary text-3xl md:text-5xl`}>
+          <span className={`${AbrilFatface.className} text-dk_primary text-3xl md:text-4xl 2xl:text-5xl`}>
             {" "}
             Integral
           </span>
