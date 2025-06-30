@@ -60,7 +60,7 @@ const NavBar = () => {
         scrolled ? "bg-background/80" : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 py-4 md:py-1 flex items-center justify-between">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -71,8 +71,8 @@ const NavBar = () => {
             <Image
               src="/images/Logo_Blindaje.svg"
               alt="Logo Blindaje"
-              width={40}
-              height={40}
+              width={42}
+              height={42}
             />
             <Image
               src="/images/Logotipo_Blindaje.svg"

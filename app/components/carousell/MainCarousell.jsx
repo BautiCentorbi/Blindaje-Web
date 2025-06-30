@@ -1,54 +1,68 @@
-'use client'
-import { images } from '@/app/constants/Images'
-import Image from 'next/image'
-import React, { Suspense, useEffect, useState } from 'react'
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+"use client";
+import { images } from "@/app/constants/Images";
+import Image from "next/image";
+import React, { useEffect, useState, Suspense } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const imageVariants = {
+  enter: { opacity: 0, scale: 0.98, x: 50 },
+  center: { opacity: 1, scale: 1, x: 0 },
+  exit: { opacity: 0, scale: 0.98, x: -50 },
+};
 
 const MainCarousell = () => {
-    const [ activeImage, setActiveImage ] = useState(0)
-    
-    const nextImg = () => {
-        activeImage === images.length - 1
-        ? setActiveImage(0)
-        : setActiveImage(activeImage + 1)
-    }
-    const prevImg = () => {
-        activeImage === 0
-        ? setActiveImage(images.length - 1)
-        : setActiveImage(activeImage - 1)
-    }
+  const [activeImage, setActiveImage] = useState(0);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {nextImg()},3000)
-        return () => clearTimeout(timer)
-    }, [activeImage])
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [activeImage]);
 
-    return (
-    <div className='flex place-items-center w-full mx-auto rounded-2xl'>
-        <div className='w-full flex justify-center items-center gap-4 transition-transform ease-in-out duration-300 rounded-2xl'>
-            {images.map((img, i)=> (
-                <div 
-                key={i}
-                className={`${
-                    i === activeImage
-                    ? 'block w-full h-96 object-cover transition-all duration-500 ease-in-out'
-                    : 'transition hidden'
-                }`}
-                >
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Image 
-                            src={img.src}
-                            alt={img.description}
-                            width={500}
-                            height={500}
-                            className='object-cover w-full h-full rounded-2xl'
-                        />
-                    </Suspense>
-                </div>
-            ))}
-        </div>
+  return (
+    <div className="w-full flex flex-col items-center justify-center gap-4">
+      <div className="relative w-full h-96 overflow-hidden rounded-2xl">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeImage}
+            variants={imageVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            className="absolute w-full h-full"
+          >
+            <Suspense fallback={<div>Cargando...</div>}>
+              <Image
+                src={images[activeImage].src}
+                alt={images[activeImage].description}
+                fill
+                className="object-cover rounded-2xl"
+                priority
+              />
+            </Suspense>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Dots indicadores: ahora están FUERA de la imagen */}
+      <div className="mt-4 flex gap-2">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActiveImage(i)}
+            aria-label={`Ir a slide ${i + 1}`}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              i === activeImage
+                ? "bg-dk_primary scale-110 shadow-md"
+                : "bg-gray-400/40 hover:bg-gray-500/60"
+            }`}
+          />
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainCarousell
+export default MainCarousell;
