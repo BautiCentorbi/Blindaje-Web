@@ -9,7 +9,6 @@ export async function POST(req) {
 
     // Validar reCAPTCHA
     const token = formData.get("token");
-    console.log("TOKEN RECIBIDO:", token);
     const captchaRes = await fetch(
       `https://www.google.com/recaptcha/api/siteverify`,
       {
@@ -24,7 +23,6 @@ export async function POST(req) {
       }
     ).then((res) => res.json());
 
-    console.log("Respuesta de Google CAPTCHA:", captchaRes); // <--- MOSTRÁ ESTO
 
     if (!captchaRes.success) {
       return NextResponse.json({ error: "Captcha inválido" }, { status: 400 });
@@ -60,8 +58,6 @@ export async function POST(req) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    console.log('Enviando email con Resend...')
-
     const response = await resend.emails.send({
       from: "Formulario Blindaje <noreply@blindaje.com.ar>",
       to: process.env.RESENT_TO_RRHH,
@@ -79,11 +75,8 @@ export async function POST(req) {
       ],
     });
 
-    console.log('Respuesta de resend:', response)
-
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.log("Error en el servidor", error);
     return NextResponse.json(
       { error: "Error en el servidor" },
       { status: 500 }
