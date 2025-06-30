@@ -69,10 +69,10 @@ const NavBar = () => {
         >
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/Isotipo_Blindaje.svg"
+              src="/images/Logo_Blindaje.svg"
               alt="Logo Blindaje"
-              width={60}
-              height={60}
+              width={40}
+              height={40}
             />
             <Image
               src="/images/Logotipo_Blindaje.svg"

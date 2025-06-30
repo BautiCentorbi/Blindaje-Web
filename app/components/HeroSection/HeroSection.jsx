@@ -8,7 +8,7 @@ import SecondaryButton from "../ui/SecondaryButton";
 
 const Hero = () => {
   return (
-    <section className="w-full h-full dark:text-white text-black flex items-center justify-center mt-20 md:my-20 2xl:mt-40 px-6 md:px-12 lg:px-24">
+    <section className="w-full h-full dark:text-white text-black flex items-center justify-center mt-20 md:my-24 2xl:mt-40 px-6 md:px-12 lg:px-24">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -84,48 +84,36 @@ const Hero = () => {
               </SecondaryButton>
             </Link>
           </div>
-          <div className="pt-4 md:pt-8 flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="pt-4 md:pt-8 w-full">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
-              className="max-h-12 sm:max-h-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              className="flex flex-wrap justify-center md:justify-start items-center gap-x-6 gap-y-4 max-w-[90%] md:max-w-[700px] lg:max-w-[900px] xl:max-w-full mx-auto"
             >
-              <Image
-                src="/images/Hikvision_Logo.png"
-                alt="Hikvision"
-                width={100}
-                height={40}
-                className="h-fill w-auto object-contain lt:filter invert items-center justify-center"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-              className="max-h-12 sm:max-h-4 items-center justify-center"
-            >
-              <Image
-                src="/images/Dahua_Logo.png"
-                alt="Logo 2"
-                width={90}
-                height={40}
-                className="h-fill w-auto object-contain lt:filter invert items-center justify-center"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.55 }}
-              className="max-h- sm:max-h-4 items-center justify-center"
-            >
-              <Image
-                src="/images/UniView_Logo.png"
-                alt="Uniview"
-                width={90}
-                height={40}
-                className="h-fill w-auto object-contain lt:filter invert items-center justify-center"
-              />
+              {[
+                { src: "/images/Hikvision_Logo.png", alt: "Hikvision", width: 90 },
+                { src: "/images/Dahua_Logo.png", alt: "Dahua", width: 65 },
+                { src: "/images/UniView_Logo.png", alt: "Uniview", width: 70 },
+                { src: "/images/ZKTeco_Logo.png", alt: "ZKTeco", width:70 },
+                { src: "/images/Cygnus_Logo.png", alt: "Cygnus", width:70 },
+              ].map((logo, index) => (
+                <motion.div
+                  key={logo.alt}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.45 + index * 0.05 }}
+                  className="flex items-center min-h-[12px] md:min-h-[32px] max-h-[40px] sm:max-h-[24px] overflow-hidden"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width} // puede variar según marca
+                    height={40}
+                    className="object-contain h-full w-auto lt:filter invert"
+                  />
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
