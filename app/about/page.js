@@ -6,6 +6,49 @@ import GoalsSection from "./components/GoalsSection.jsx";
 import DiferentiationSection from "./components/DiferentiationSection.jsx";
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
+export const metadata = {
+  title: 'Sobre Nosotros',
+  description:
+    'Conocé la historia, misión y visión de Blindaje. Ofrecemos servicios de seguridad privada con enfoque humano y tecnología de punta en Mendoza.',
+  keywords: [
+    'Blindaje',
+    'Sobre nosotros',
+    'Nuestra historia',
+    'Misión',
+    'Visión',
+    'Seguridad en Mendoza',
+    'Empresa de seguridad',
+    'Valores Blindaje',
+    '¿Por qué elegirnos?',
+  ],
+  openGraph: {
+    title: 'Sobre Nosotros | Blindaje',
+    description:
+      'Descubrí quiénes somos, nuestros valores y por qué elegir Blindaje para tu seguridad privada.',
+    url: 'https://blindaje.com.ar/about',
+    siteName: 'Blindaje',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Blindaje Seguridad Privada',
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sobre Nosotros | Blindaje',
+    description:
+      'Conocé nuestra historia y el compromiso de Blindaje con la seguridad privada en Mendoza.',
+    images: ['/twitter-image.png'],
+  },
+};
+
+
+
 const page = () => {
   return (
     <main className="relative min-h-screen py-24 2xl:py-40 max-w-screen overflow-hidden">

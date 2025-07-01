@@ -4,6 +4,44 @@ import { Abril_Fatface } from "next/font/google";
 
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
+export const metadata = {
+  title: 'Servicios',
+  description:
+    'Conocé los servicios de seguridad privada de Blindaje: vigilancia presencial, monitoreo, alarmas, cámaras y más.',
+  keywords: [
+    'Servicios de seguridad',
+    'Blindaje Mendoza',
+    'Alarmas',
+    'Cámaras de seguridad',
+    'Vigilancia privada',
+    'Monitoreo de alarmas',
+    'Empresas de seguridad en Mendoza'
+  ],
+  openGraph: {
+    title: 'Servicios | Blindaje',
+    description:
+      'Descubrí nuestras soluciones de protección y vigilancia adaptadas a cada necesidad en Mendoza.',
+    url: 'https://blindaje.com.ar/services',
+    siteName: 'Blindaje',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Servicios Blindaje Seguridad Privada',
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Servicios | Blindaje',
+    description: 'Explorá todos los servicios de Blindaje en un solo lugar.',
+    images: ['/twitter-image.png'],
+  },
+};
+
 
 const ServicesPage = () => {
   return (

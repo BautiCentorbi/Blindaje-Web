@@ -10,9 +10,67 @@ const HankenGrotesk = Hanken_Grotesk({
 });
 
 export const metadata = {
-  title: "Blindaje - Seguridad Privada Integral",
+  title: {
+    default: "Blindaje - Seguridad Privada Integral",
+    template: "%s | Blindaje",
+  },
   description:
-    "Blindaje es una empresa argentina dedicada a la seguridad privada integral. Donde nos enfocamos en brindar el mejor servicio posible, contamos con servicios como...",
+    "Blindaje ofrece servicios de seguridad privada, vigilancia, alarmas y soluciones integrales en toda la provincia de Mendoza. Nuestro equipo de profesionales garantiza la seguridad de tus propiedades y personas con tecnología de punta y experiencia en el mercado.",
+  keywords: [
+    "Seguridad privada",
+    "Vigilancia",
+    "Alarmas",
+    "Cámaras de seguridad",
+    "Monitoreo",
+    "Blindaje",
+    "Mendoza",
+    "Empresas de seguridad",
+    "Servicios de seguridad",
+    "Soluciones integrales",
+    "Personal de seguridad",
+    "Protección de propiedades",
+    "Protección de personas",
+    "Seguridad privada integral",
+    "Seguridad privada en Mendoza",
+  ],
+  metadataBase: new URL("https://blindaje.com.ar"),
+  openGraph: {
+    title: "Blindaje Seguridad Privada",
+    description:
+      "Servicios de seguridad personalizados en Mendoza. Vigilancia, alarmas y monitoreo profesional.",
+    url: "https://blindaje.com.ar",
+    siteName: "Blindaje",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Blindaje Seguridad Privada",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blindaje Seguridad Privada",
+    description:
+      "Soluciones de seguridad en Mendoza. Protegé lo que más importa.",
+    site: "@blindaje",
+    images: ["/twitter-image.png"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+    shortcut: "/icon.png",
+  },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    title: "Blindaje.ar",
+    statusBarStyle: "black-translucent",
+    capable: true,
+  },
+  themeColor: "#E1701A",
 };
 
 export default function RootLayout({ children }) {

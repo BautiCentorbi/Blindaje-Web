@@ -2,6 +2,45 @@ import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import ContactForm from "./components/ContactForm.jsx";
 import { Linkedin, LinkedinIcon, MailIcon } from "lucide-react";
 
+export const metadata = {
+  title: 'Contacto',
+  description:
+    'Contactá a Blindaje para solicitar presupuestos, asesoramiento en seguridad o información sobre nuestros servicios en Mendoza.',
+  keywords: [
+    'Contacto Blindaje',
+    'Presupuesto seguridad',
+    'Consultas Blindaje',
+    'Blindaje Mendoza',
+    'Contacto seguridad privada'
+  ],
+  openGraph: {
+    title: 'Contacto | Blindaje',
+    description:
+      'Ponete en contacto con Blindaje para soluciones de seguridad personalizadas en Mendoza.',
+    url: 'https://blindaje.com.ar/contact',
+    siteName: 'Blindaje',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Blindaje Seguridad Privada',
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contacto | Blindaje',
+    description:
+      'Comunicate con nuestro equipo de expertos en seguridad privada.',
+    images: ['/twitter-image.png'],
+  },
+};
+
+
+
 export default function Contact() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 md:px-18 lg:px-24 xl:48 md:py-12">
