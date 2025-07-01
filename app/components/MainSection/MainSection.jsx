@@ -2,14 +2,17 @@ import React from "react";
 import Image from "next/image";
 import MainCarousell from "../carousell/MainCarousell";
 import * as motion from "motion/react-client";
+import InfoDivider from "./InfoDivider";
+import MethodologyDivider from "./MethodologyDivider";
 
 const MainSection = () => {
   return (
-    <main className=" dk:text-white px-8 md:px-48 py-8 md:py-24">
+    <main className=" dk:text-white px-8 md:px-32 py-8 md:py-12 2xl:py-24">
+      <InfoDivider />
       <section>
         <article className="flex flex-col gap-4">
           <div className="flex flex-col w-fit">
-            <h2 className="text-3xl md:text-6xl font-bold w-fit">¿Por qué elegirnos?</h2>
+            <h2 className="text-3xl md:text-5xl 2xl:text-6xl font-bold w-fit">¿Por qué elegirnos?</h2>
             <hr className="border-2 border-dk_primary my-2 md:my-4 w-full" />
           </div>
           <div className="flex flex-col md:flex-row gap-16 items-center">
@@ -83,6 +86,7 @@ const MainSection = () => {
           </div>
         </article>
       </section>
+      <MethodologyDivider />
       <section className="mx-auto max-w-screen overflow-hidden text-white rounded-lg my-32">
         <article className="flex flex-col w-full">
           <figure className="relative w-full h-full">

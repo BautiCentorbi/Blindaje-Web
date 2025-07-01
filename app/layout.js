@@ -2,6 +2,7 @@ import "./globals.css";
 import NavBar from "./components/ui/NavBar";
 import { Hanken_Grotesk } from "next/font/google";
 import Footer from "./components/ui/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const HankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`${HankenGrotesk.className} scroll-smooth`}>
         <NavBar />
         {children}
+        <WhatsAppButton />
         <Footer />
       </body>
     </html>

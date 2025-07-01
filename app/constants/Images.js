@@ -11,7 +11,17 @@ export const images = [
     },
     {
         id: 3,
-        description: 'Part of our guards in a YPF event in Mendoza, Argentina.',
+        description: 'One of our security guards standing alongside a basketball court for the semifinals of a local tournament. In Godoy Cruz Stadium.',
         src: '/images/slide3.webp'
+    },
+    {
+        id: 4,
+        description: 'Part of our guards in a YPF event in Mendoza, Argentina.',
+        src: '/images/slide4.webp'
+    },
+    {
+        id: 5,
+        description: 'One of our guards standing alongside a basketball court for the semifinals of a local tournament. In Asociación Deportiva Anzorena Stadium.',
+        src: '/images/slide5.webp'
     },
 ]

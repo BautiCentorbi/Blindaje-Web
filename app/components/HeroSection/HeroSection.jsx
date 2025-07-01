@@ -24,6 +24,21 @@ const Hero = () => {
       >
         {/* Izquierda - Texto */}
         <div className="gap-6">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-auto md:w-fit h-24 md:h-18 2xl:h-32 ">
+            <Image
+              src="/images/Imagotipo_Blindaje.svg"
+              alt="Modus Operandi"
+              width={80}
+              height={40}
+              className="w-full h-full object-contain"
+            />
+          </motion.div>
           <motion.h2
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -84,7 +99,7 @@ const Hero = () => {
               </SecondaryButton>
             </Link>
           </div>
-          <div className="pt-4 md:pt-8 w-full">
+          <div className="pt-4 2xl:pt-8 w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -92,11 +107,11 @@ const Hero = () => {
               className="flex flex-wrap justify-center md:justify-start items-center gap-x-6 gap-y-4 max-w-[90%] md:max-w-[700px] lg:max-w-[900px] xl:max-w-full mx-auto"
             >
               {[
-                { src: "/images/Hikvision_Logo.png", alt: "Hikvision", width: 90 },
-                { src: "/images/Dahua_Logo.png", alt: "Dahua", width: 65 },
-                { src: "/images/UniView_Logo.png", alt: "Uniview", width: 70 },
-                { src: "/images/ZKTeco_Logo.png", alt: "ZKTeco", width:70 },
-                { src: "/images/Cygnus_Logo.png", alt: "Cygnus", width:70 },
+                { src: "/images/Hikvision_Logo.webp", alt: "Hikvision", width: 90 },
+                { src: "/images/Dahua_Logo.webp", alt: "Dahua", width: 65 },
+                { src: "/images/Uniview_Logo.webp", alt: "Uniview", width: 70 },
+                { src: "/images/ZKTeco_Logo.webp", alt: "ZKTeco", width:70 },
+                { src: "/images/Cygnus_Logo.webp", alt: "Cygnus", width:70 },
               ].map((logo, index) => (
                 <motion.div
                   key={logo.alt}
