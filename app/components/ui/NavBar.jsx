@@ -25,8 +25,8 @@ const navItems = [
     href: "/about",
     submenu: [
       { label: "Nuestra Historia", href: "/about#historia" },
-      { label: "Objetivos", href: "/about#objetivos" },
-      { label: "¿Por qué elegirnos?", href: "/about#porque-elegirnos" },
+      { label: "¿Qué nos diferencia?", href: "/about#diferencia" },
+      { label: "Nuestro enfoque", href: "/about#enfoque" },
     ],
   },
   { label: "Servicios", ariaLabel: "Ir a Servicios" ,href: "/services" },

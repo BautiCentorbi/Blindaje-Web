@@ -6,7 +6,7 @@ const MainSection = () => {
   return (
     <section className="min-h-screen mt-8 2xl:mt-12 flex flex-col items-center px-4 md:px-60">
       <div className="2xl:max-w-[700px] md:max-w-[550px]">
-        <Image src={"/images/Services-Steps.svg"} height={120} width={700} />
+        <Image alt="Nuestros pasos a seguir en el proceso son: 1- Detectamos, 2- Prevenimos, 3- Solucionamos" src={"/images/Services-Steps.svg"} height={120} width={700} />
       </div>
       <article className="flex flex-col gap-12 my-4 md:my-8">
         <div className="flex flex-col gap-8">
