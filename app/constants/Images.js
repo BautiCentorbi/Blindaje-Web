@@ -24,4 +24,9 @@ export const images = [
         description: 'One of our guards standing alongside a basketball court for the semifinals of a local tournament. In Asociación Deportiva Anzorena Stadium.',
         src: '/images/slide5.webp'
     },
+    {
+        id: 6,
+        description: 'One of our guards standing alongside a basketball court for the semifinals of a local tournament. In Atenas Sport Club Stadium.',
+        src: '/images/slide6.webp'
+    }
 ]

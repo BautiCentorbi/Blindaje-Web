@@ -30,7 +30,7 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-auto md:w-fit h-24 md:h-28 2xl:h-32 ">
+            className="w-auto md:w-fit h-24 md:h-36 2xl:h-32 ">
             <Image
               src="/images/Imagotipo_Blindaje.svg"
               alt="Logo de Blindaje Seguridad Privada Integral"
@@ -45,7 +45,7 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col text-xl md:text-3xl 2xl:text-4xl leading-tight"
+            className="flex flex-col text-xl md:text-2xl 2xl:text-4xl leading-tight"
           >
             Redefinimos lo que significa
           </motion.h2>
@@ -55,7 +55,7 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            className="mt-2 md:mt-4 uppercase font-extrabold text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-dk_primary"
+            className="mt-2 md:mt-4 uppercase font-extrabold text-4xl md:text-5xl 2xl:text-7xl text-dk_primary"
           >
             Protección
             <br /> personalizada
@@ -79,7 +79,7 @@ const Hero = () => {
             este concepto.
           </motion.p>
           <div className="flex flex-col md:flex-row gap-4 my-6 transition">
-            <Link href={"/contact"}>
+            <Link href={"/cotizaciones"}>
               <MainButton
                 ariaLabel="Solicitá una cotización"
                 label="Solicitá una cotización"
@@ -123,7 +123,7 @@ const Hero = () => {
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={logo.width} // puede variar según marca
+                    width={logo.width}
                     height={40}
                     className="object-contain h-full w-auto lt:filter invert"
                   />
