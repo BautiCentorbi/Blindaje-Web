@@ -69,8 +69,7 @@ export const metadata = {
     title: "Blindaje.ar",
     statusBarStyle: "black-translucent",
     capable: true,
-  },
-  themeColor: "#E1701A",
+  }
 };
 
 export default function RootLayout({ children }) {

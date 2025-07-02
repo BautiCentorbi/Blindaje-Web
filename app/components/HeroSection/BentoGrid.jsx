@@ -51,7 +51,7 @@ const bentoItems = [
     className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
-        href="https://wa.me/5492613833783"
+        href="https://wa.me/5492613833783?text=Hola%2C%20quisiera%20consultar%20por%20servicios%20de%20seguridad%20en%20mi%20empresa"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-colors"
@@ -66,7 +66,7 @@ const bentoItems = [
       "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
-        href="https://instagram.com/blindaje_ar"
+        href="https://instagram.com/blindaje.ar"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-opacity"
@@ -80,7 +80,7 @@ const bentoItems = [
     className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
       <a
-        href="https://linkedin.com/in/tuusuario"
+        href="https://www.linkedin.com/company/blindaje-seguridad-privada-integral"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-colors"

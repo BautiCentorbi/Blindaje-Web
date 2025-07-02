@@ -33,16 +33,16 @@ const Footer = () => {
         <div className="flex items-center gap-16">
             <hr className='border-slate-600 hidden md:flex md:w-48'/>
             <div className='flex gap-8'>
-                <Link href={'/'}> 
+                <Link href={'https://www.instagram.com/blindaje.ar/'}> 
                     <FaInstagram size={32} className='transition hover:text-dk_primary hover:scale-125'/>    
                 </Link>
-                <Link href={'/'}>
+                <Link href={'https://wa.me/5492613833783?text=Hola%2C%20quisiera%20consultar%20por%20servicios%20de%20seguridad%20en%20mi%20empresa'}>
                     <FaWhatsapp size={32} className='transition hover:text-dk_primary hover:scale-125'/>
                 </Link>
-                <Link href={'/'}>
+                <Link href={'https://www.facebook.com/people/Blindaje-Seguridad-Privada-Integral/61577887564978/'}>
                     <FaFacebook size={32} className='transition hover:text-dk_primary hover:scale-125'/>
                 </Link>
-                <Link href={'/'}>
+                <Link href={'https://www.linkedin.com/company/blindaje-seguridad-privada-integral/'}>
                     <FaLinkedin size={32} className='transition hover:text-dk_primary hover:scale-125'/>
                 </Link>
             </div>
