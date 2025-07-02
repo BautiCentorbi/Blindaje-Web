@@ -36,7 +36,7 @@ export async function POST(req) {
     const response = await resend.emails.send({
       from: "Cotización Blindaje <noreply@blindaje.com.ar>",
       to: process.env.RESEND_TO_SEGURIDAD,
-      subject: `Nuevo mensaje: ${asunto}`,
+      subject: `${asunto}`,
       html: `
       <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
       <p><strong>Mensaje:</strong></p>
