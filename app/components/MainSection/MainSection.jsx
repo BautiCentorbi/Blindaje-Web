@@ -16,7 +16,7 @@ const MainSection = () => {
             <hr className="border-2 border-dk_primary my-2 md:my-4 w-full" />
           </div>
           <div className="flex flex-col md:flex-row gap-16 items-center">
-            <ul className="text-md md:text-lg flex flex-col gap-4">
+            <div className="text-md md:text-lg flex flex-col gap-4">
               Nos dedicamos a ofrecer soluciones integrales para la protección de lo que más te importa. Aquí te contamos por qué somos la mejor opción:
               <div className="flex gap-4 items-center">
                 <svg
@@ -26,11 +26,11 @@ const MainSection = () => {
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
-                <li>
+                <p>
                   <span className="font-bold">Profesionalismo:</span> Contamos con
                   un equipo altamente capacitado y experimentado en el campo de
                   la seguridad.
-                </li>
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <svg
@@ -40,11 +40,11 @@ const MainSection = () => {
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
-                <li>
+                <p>
                   <span className="font-bold">Seguridad Integral:</span>{" "}
                   Ofrecemos servicios completos que incluyen seguridad física y
                   electrónica, análisis de riesgos, asesoría y consultoría.
-                </li>
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <svg
@@ -53,11 +53,11 @@ const MainSection = () => {
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
-                <li>
+                <p>
                   <span className="font-bold">Tecnología de Punta:</span>{" "}
                   Utilizamos las últimas innovaciones tecnológicas para
                   garantizar la máxima eficacia y protección.
-                </li>
+                </p>
               </div>
               <div className="flex gap-4 items-center">
                 <svg
@@ -67,13 +67,13 @@ const MainSection = () => {
                 >
                   <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                 </svg>
-                <li>
+                <p>
                   <span className="font-bold">Prevención y Detección:</span> Nos
                   enfocamos en prevenir posibles amenazas y detectar cualquier
                   situación de riesgo antes de que se convierta en un problema.
-                </li>
+                </p>
               </div>
-            </ul>
+            </div>
             <picture className="">
               <Image
                 src={"/images/MainSectionIMG.jpg"}

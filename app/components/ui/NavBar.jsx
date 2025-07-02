@@ -18,9 +18,10 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  { label: "Home", href: "/", ariaLabel: "Ir al inicio" },
   {
     label: "Nosotros",
+    ariaLabel: "Ir a Nosotros",
     href: "/about",
     submenu: [
       { label: "Nuestra Historia", href: "/about#historia" },
@@ -28,8 +29,8 @@ const navItems = [
       { label: "¿Por qué elegirnos?", href: "/about#porque-elegirnos" },
     ],
   },
-  { label: "Servicios", href: "/services" },
-  { label: "Contacto", href: "/contact" },
+  { label: "Servicios", ariaLabel: "Ir a Servicios" ,href: "/services" },
+  { label: "Contacto", ariaLabel: "Ir a Contacto" ,href: "/contact" },
 ];
 
 const NavBar = () => {
@@ -67,16 +68,16 @@ const NavBar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
         >
-          <Link href="/" className="flex items-center gap-2">
+          <Link aria-label="Ir a Inicio - Logo de Blindaje" href="/" className="flex items-center gap-2">
             <Image
               src="/images/Logo_Blindaje.svg"
-              alt="Logo Blindaje"
+              alt="Símbolo del Logo Blindaje"
               width={42}
               height={42}
             />
             <Image
               src="/images/Logotipo_Blindaje.svg"
-              alt="Logo Blindaje"
+              alt="Texto del Logo Blindaje"
               width={150}
               height={60}
               className="hidden md:block"
@@ -99,7 +100,7 @@ const NavBar = () => {
                             "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary"
                         )}
                       >
-                        <Link href={item.href}>{item.label}</Link>
+                        <Link aria-label={item.ariaLabel} href={item.href}>{item.label}</Link>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul className="grid gap-2 p-4 w-56">
@@ -117,7 +118,7 @@ const NavBar = () => {
                       </NavigationMenuContent>
                     </>
                   ) : (
-                    <Link href={item.href} legacyBehavior passHref>
+                    <Link aria-label={item.ariaLabel} href={item.href} legacyBehavior passHref>
                       <NavigationMenuLink
                         className={cn(
                           navigationMenuTriggerStyle(),
@@ -157,6 +158,7 @@ const NavBar = () => {
             {navItems.map((item) => (
               <div key={item.label}>
                 <Link
+                  aria-label={item.ariaLabel}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className="block"

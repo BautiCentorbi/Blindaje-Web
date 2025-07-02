@@ -57,6 +57,7 @@ export default function Contact() {
             <div className="flex gap-2 mb-2">
               <Link
                 target="_blank"
+                aria-label="Whatsapp de Blindaje - 1"
                 rel="noopener noreferrer"
                 href="https://wa.me/5492613833783"
                 className="text-green-600 font-bold"
@@ -67,6 +68,7 @@ export default function Contact() {
             <div className="flex gap-2 mb-2">
               <Link
                 target="_blank"
+                aria-label="Whatsapp de Blindaje - 2"
                 rel="noopener noreferrer"
                 href="https://wa.me/5492612062425"
                 className="text-green-600 font-bold"
@@ -77,6 +79,7 @@ export default function Contact() {
             <div className="flex gap-2">
               <Link
                 target="_blank"
+                aria-label="Whatsapp de Blindaje - 3"
                 rel="noopener noreferrer"
                 href="https://wa.me/5492634598916"
                 className="text-green-600 font-bold"
@@ -92,6 +95,7 @@ export default function Contact() {
             <h3 className="text-xl font-bold">Correo Electrónico:</h3>
             <Link
               target="_blank"
+              aria-label="Correo de Blindaje"
               rel="noopener noreferrer"
               href="mailto:seguridad@blindaje.com.ar"
               className="text-dk_primary font-bold"
@@ -106,6 +110,7 @@ export default function Contact() {
             <h3 className="text-xl font-bold">Nuestro Linkedin:</h3>
             <Link
               target="_blank"
+              aria-label="Linkedin de Blindaje"
               rel="noopener noreferrer"
               href="https://www.linkedin.com/company/blindaje-seguridad-privada-integral"
               className="text-blue-600 font-bold"

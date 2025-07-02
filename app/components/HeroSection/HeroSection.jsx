@@ -79,13 +79,13 @@ const Hero = () => {
             este concepto.
           </motion.p>
           <div className="flex flex-col md:flex-row gap-4 my-6 transition">
-            <Link href={"/cotizaciones"}>
+            <Link aria-label="Solicitá una cotización" href={"/cotizaciones"}>
               <MainButton
                 ariaLabel="Solicitá una cotización"
                 label="Solicitá una cotización"
               />
             </Link>
-            <Link href={"/about"}>
+            <Link aria-label="Conocé sobre nosotros" href={"/about"}>
               <SecondaryButton
                 ariaLabel="Conocé sobre nosotros"
                 label="Conocé sobre nosotros"
@@ -107,11 +107,11 @@ const Hero = () => {
               className="flex flex-wrap justify-center md:justify-start items-center gap-x-6 gap-y-4 max-w-[90%] md:max-w-[700px] lg:max-w-[900px] xl:max-w-full mx-auto"
             >
               {[
-                { src: "/images/Hikvision_Logo.webp", alt: "Hikvision", width: 90 },
-                { src: "/images/Dahua_Logo.webp", alt: "Dahua", width: 65 },
-                { src: "/images/Uniview_Logo.webp", alt: "Uniview", width: 70 },
-                { src: "/images/ZKTeco_Logo.webp", alt: "ZKTeco", width:70 },
-                { src: "/images/Cygnus_Logo.webp", alt: "Cygnus", width:70 },
+                { src: "/images/Hikvision_Logo.webp", alt: "Logotipo de Hikvision", width: 90 },
+                { src: "/images/Dahua_Logo.webp", alt: "Logotipo de Dahua", width: 65 },
+                { src: "/images/Uniview_Logo.webp", alt: "Logotipo de Uniview", width: 70 },
+                { src: "/images/ZKTeco_Logo.webp", alt: "Logotipo de ZKTeco", width:70 },
+                { src: "/images/Cygnus_Logo.webp", alt: "Logotipo de Cygnus", width:70 },
               ].map((logo, index) => (
                 <motion.div
                   key={logo.alt}

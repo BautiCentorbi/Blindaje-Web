@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import CarouselBento from "./BentoCarousel.jsx";
 import { ShieldCheck, Users, Eye, Headphones, Instagram, Linkedin, Phone } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import Link from "next/link.js";
 
 const bentoItems = [
   {
@@ -50,14 +51,15 @@ const bentoItems = [
     id: 4,
     className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
-      <a
+      <Link
         href="https://wa.me/5492613833783?text=Hola%2C%20quisiera%20consultar%20por%20servicios%20de%20seguridad%20en%20mi%20empresa"
+        aria-label="WhatsApp de Blindaje"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-colors"
       >
         <FaWhatsapp className="w-7 h-7" />
-      </a>
+      </Link>
     ),
   },
   {
@@ -65,28 +67,30 @@ const bentoItems = [
     className:
       "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
-      <a
+      <Link
         href="https://instagram.com/blindaje.ar"
+        aria-label="Instagram de Blindaje"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-opacity"
       >
         <Instagram className="w-6 h-6" />
-      </a>
+      </Link>
     ),
   },
   {
     id: 6,
     className: "col-span-2 md:col-span-1 row-span-3 md:row-span-1 bg-dk_primary text-white shadow-lg shadow-dk_primary/30",
     content: (
-      <a
+      <Link
         href="https://www.linkedin.com/company/blindaje-seguridad-privada-integral"
+        aria-label="Linkedin de Blindaje"
         target="_blank"
         rel="noopener noreferrer"
         className="h-full w-full flex items-center justify-center rounded-2xl hover:bg-lt_primary transition-colors"
       >
         <Linkedin className="w-6 h-6" />
-      </a>
+      </Link>
     ),
   },
 ];

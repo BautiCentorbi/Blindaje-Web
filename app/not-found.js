@@ -34,6 +34,7 @@ const NotFound = () => {
 
         <Link
           href="/"
+          aria-label="Volver al inicio"
           className="inline-flex items-center gap-2 bg-dk_primary hover:bg-orange-600 text-white px-6 py-3 rounded-xl text-sm md:text-base font-semibold transition-all"
         >
           <ArrowLeft size={18} /> Volver al inicio

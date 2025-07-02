@@ -6,6 +6,7 @@ const WhatsAppButton = () => {
   return (
     <Link
       href="https://wa.me/5492613833783?text=Hola%2C%20quisiera%20consultar%20por%20servicios%20de%20seguridad%20en%20mi%20empresa"
+      aria-label="WhatsApp de Blindaje"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-105 transition-all"

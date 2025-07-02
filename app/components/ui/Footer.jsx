@@ -11,36 +11,40 @@ const Footer = () => {
   return (
     <footer className="flex flex-col w-full items-center pt-8 md:pt-10 2xl:pt-12 pb-2 md:pb-4 px-8 md:px-24 gap-4 md:gap-8 bg-gray-100">
       <div>
-        <Link href={"/"}>
+        <Link aria-label="Ir al inicio" href={"/"}>
           <Image
             src={"/images/Imagotipo_Blindaje.svg"}
             className="filter dk:brightness-0 dk:invert"
             height={64}
             width={240}
-            alt=""
+            alt="Logotipo de Blindaje | Seguridad Privad Integral"
           />
         </Link>
       </div>
       <div className="flex flex-col md:flex-row gap-2 md:gap-8">
         <Link
+          aria-label="Ir al inicio"
           href={"/"}
           className="transition hover:text-dk_primary hover:scale-110"
         >
           Home
         </Link>
         <Link
+          aria-label="Ir a nosotros"
           href={"/about"}
           className="transition hover:text-dk_primary hover:scale-110"
         >
           Nosotros
         </Link>
         <Link
+          aria-label="Ir a servicios"
           href={"/services"}
           className="transition hover:text-dk_primary hover:scale-110"
         >
           Servicios
         </Link>
         <Link
+          aria-label="Ir a contacto"
           href={"/contact"}
           className="transition hover:text-dk_primary hover:scale-110"
         >
@@ -51,6 +55,7 @@ const Footer = () => {
         <hr className="border-slate-600 hidden md:flex md:w-48" />
         <div className="flex gap-8">
           <Link
+            aria-label="Instagram de Blindaje"
             target="_blank"
             rel="noopener noreferrer"
             href={"https://www.instagram.com/blindaje.ar/"}
@@ -61,6 +66,7 @@ const Footer = () => {
             />
           </Link>
           <Link
+            aria-label="WhatsApp de Blindaje"
             target="_blank"
             rel="noopener noreferrer"
             href={
@@ -73,6 +79,7 @@ const Footer = () => {
             />
           </Link>
           <Link
+            aria-label="Facebook de Blindaje"
             target="_blank"
             rel="noopener noreferrer"
             href={
@@ -85,6 +92,7 @@ const Footer = () => {
             />
           </Link>
           <Link
+            aria-label="Linkedin de Blindaje"
             target="_blank"
             rel="noopener noreferrer"
             href={

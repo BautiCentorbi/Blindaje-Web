@@ -4,9 +4,9 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const slides = [
-  { id: 1, title: "Detectamos", image: "/images/Modus_Operandi-1.svg" },
-  { id: 2, title: "Prevenimos", image: "/images/Modus_Operandi-2.svg" },
-  { id: 3, title: "Solucionamos", image: "/images/Modus_Operandi-3.svg" },
+  { id: 1, title: "Detectamos", image: "/images/Modus_Operandi-1.svg", alt: "Paso 1 - Detectamos" },
+  { id: 2, title: "Prevenimos", image: "/images/Modus_Operandi-2.svg", alt: "Paso 2 - Prevenimos" },
+  { id: 3, title: "Solucionamos", image: "/images/Modus_Operandi-3.svg", alt: "Paso 3 - Solucionamos" },
 ];
 
 export default function CarouselBento() {
@@ -32,7 +32,7 @@ export default function CarouselBento() {
         >
           <Image
             src={slides[index].image}
-            alt={slides[index].title}
+            alt={slides[index].alt}
             width={400}
             height={400}
             className="w-full h-full object-contain"
