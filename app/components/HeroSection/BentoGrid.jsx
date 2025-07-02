@@ -38,8 +38,8 @@ const bentoItems = [
     id: 3,
     className: "col-span-6 md:col-span-3 row-span-2 bg-gray-800 text-white shadow-md shadow-black/20",
     content: (
-      <div className="h-full w-full flex flex-col items-end justify-center p-4 rounded-2xl bg-[#666666]">
-        <h2 className="text-2xl 2xl:text-3xl font-medium text-right ">
+      <div className="h-full w-full flex flex-col items-start justify-center p-4 rounded-2xl bg-[#666666]">
+        <h2 className="text-2xl 2xl:text-3xl font-medium ">
           Protección a medida para tu <span className="font-bold text-2xl 2xl:text-3xl uppercase">tranquilidad</span>
         </h2>
         <p className="text-right text-gray-200">Mendoza, Argentina</p>

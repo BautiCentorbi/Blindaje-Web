@@ -30,10 +30,10 @@ const Hero = () => {
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-auto md:w-fit h-24 md:h-18 2xl:h-32 ">
+            className="w-auto md:w-fit h-24 md:h-28 2xl:h-32 ">
             <Image
               src="/images/Imagotipo_Blindaje.svg"
-              alt="Modus Operandi"
+              alt="Logo de Blindaje Seguridad Privada Integral"
               width={80}
               height={40}
               className="w-full h-full object-contain"

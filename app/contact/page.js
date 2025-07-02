@@ -1,45 +1,44 @@
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import ContactForm from "./components/ContactForm.jsx";
 import { Linkedin, LinkedinIcon, MailIcon } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
-  title: 'Contacto',
+  title: "Contacto",
   description:
-    'Contactá a Blindaje para solicitar presupuestos, asesoramiento en seguridad o información sobre nuestros servicios en Mendoza.',
+    "Contactá a Blindaje para solicitar presupuestos, asesoramiento en seguridad o información sobre nuestros servicios en Mendoza.",
   keywords: [
-    'Contacto Blindaje',
-    'Presupuesto seguridad',
-    'Consultas Blindaje',
-    'Blindaje Mendoza',
-    'Contacto seguridad privada'
+    "Contacto Blindaje",
+    "Presupuesto seguridad",
+    "Consultas Blindaje",
+    "Blindaje Mendoza",
+    "Contacto seguridad privada",
   ],
   openGraph: {
-    title: 'Contacto | Blindaje',
+    title: "Contacto | Blindaje",
     description:
-      'Ponete en contacto con Blindaje para soluciones de seguridad personalizadas en Mendoza.',
-    url: 'https://blindaje.com.ar/contact',
-    siteName: 'Blindaje',
+      "Ponete en contacto con Blindaje para soluciones de seguridad personalizadas en Mendoza.",
+    url: "https://blindaje.com.ar/contact",
+    siteName: "Blindaje",
     images: [
       {
-        url: '/opengraph-image.png',
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: 'Blindaje Seguridad Privada',
+        alt: "Blindaje Seguridad Privada",
       },
     ],
-    locale: 'es_AR',
-    type: 'website',
+    locale: "es_AR",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contacto | Blindaje',
+    card: "summary_large_image",
+    title: "Contacto | Blindaje",
     description:
-      'Comunicate con nuestro equipo de expertos en seguridad privada.',
-    images: ['/twitter-image.png'],
+      "Comunicate con nuestro equipo de expertos en seguridad privada.",
+    images: ["/twitter-image.png"],
   },
 };
-
-
 
 export default function Contact() {
   return (
@@ -52,30 +51,38 @@ export default function Contact() {
         <div className="flex flex-col shadow-xl shadow-black/15 bg-white dk:text-white rounded-lg p-4 md:p-6 2xl:p-8 gap-4">
           <FaWhatsapp className="w-10 h-10 md:w-8 md:h-8 2xl:w-10 2xl:h-10 fill-green-600" />
           <div>
-            <h3 className="text-lg md:text-xl font-bold mb-2">Nuestros Whatsapp:</h3>
+            <h3 className="text-lg md:text-xl font-bold mb-2">
+              Nuestros Whatsapp:
+            </h3>
             <div className="flex gap-2 mb-2">
-              <a
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://wa.me/5492613833783"
                 className="text-green-600 font-bold"
               >
                 +54 9 261 383 3783
-              </a>
+              </Link>
             </div>
             <div className="flex gap-2 mb-2">
-              <a
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://wa.me/5492612062425"
                 className="text-green-600 font-bold"
               >
                 +54 9 261 206 2425
-              </a>{" "}
+              </Link>{" "}
             </div>
             <div className="flex gap-2">
-              <a
+              <Link
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://wa.me/5492634598916"
                 className="text-green-600 font-bold"
               >
                 +54 9 263 459 8916
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -83,24 +90,28 @@ export default function Contact() {
           <MailIcon className="w-10 h-10 md:w-8 md:h-8 2xl:w-10 2xl:h-10 text-dk_primary" />
           <div>
             <h3 className="text-xl font-bold">Correo Electrónico:</h3>
-            <a
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
               href="mailto:seguridad@blindaje.com.ar"
               className="text-dk_primary font-bold"
             >
               seguridad@blindaje.com.ar
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col shadow-xl shadow-black/15 bg-white dk:text-white rounded-lg p-4 md:p-6 2xl:p-8 gap-4">
           <FaLinkedinIn className="w-10 h-10 md:w-8 md:h-8 2xl:w-10 2xl:h-10 fill-blue-600" />
           <div>
             <h3 className="text-xl font-bold">Nuestro Linkedin:</h3>
-            <a
-              href="https://wa.me/5491122345678"
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/blindaje-seguridad-privada-integral"
               className="text-blue-600 font-bold"
             >
               Blindaje - Seguridad Privada
-            </a>
+            </Link>
           </div>
         </div>
       </article>
