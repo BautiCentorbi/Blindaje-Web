@@ -42,7 +42,7 @@ export const metadata = {
     siteName: "Blindaje",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "/opengraph-image.png", // 1200x630
         width: 1200,
         height: 630,
         alt: "Blindaje Seguridad Privada",
@@ -56,20 +56,20 @@ export const metadata = {
     title: "Blindaje Seguridad Privada",
     description:
       "Soluciones de seguridad en Mendoza. Protegé lo que más importa.",
-    site: "@blindaje",
-    images: ["/twitter-image.png"],
+    site: "@blindaje", // si tenés cuenta, actualizalo
+    images: ["/twitter-image.png"], // 1200x630 recomendado
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-icon.png",
-    shortcut: "/icon.png",
+    shortcut: "/icon.png", // 192x192 recomendado
   },
   manifest: "/manifest.json",
   appleWebApp: {
     title: "Blindaje.ar",
     statusBarStyle: "black-translucent",
     capable: true,
-  }
+  },
 };
 
 export default function RootLayout({ children }) {
