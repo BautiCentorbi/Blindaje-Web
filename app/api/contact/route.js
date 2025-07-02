@@ -60,7 +60,7 @@ export async function POST(req) {
 
     const response = await resend.emails.send({
       from: "Formulario Blindaje <noreply@blindaje.com.ar>",
-      to: process.env.RESENT_TO_RRHH,
+      to: process.env.RESEND_TO_RRHH,
       subject: `Nuevo mensaje: ${asunto}`,
       html: `
       <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>

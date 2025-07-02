@@ -34,7 +34,7 @@ export async function POST(req) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const response = await resend.emails.send({
-      from: "Formulario Blindaje <noreply@blindaje.com.ar>",
+      from: "Cotización Blindaje <noreply@blindaje.com.ar>",
       to: process.env.RESEND_TO_SEGURIDAD,
       subject: `Nuevo mensaje: ${asunto}`,
       html: `
