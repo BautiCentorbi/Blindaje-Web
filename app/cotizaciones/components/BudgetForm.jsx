@@ -94,7 +94,7 @@ const BudgetForm = () => {
           <label className="text-sm font-semibold">Asunto</label>
           <input
             name="mensaje"
-            placeholder="PUESTO: ..."
+            placeholder="COTIZACIÓN: ..."
             required
             className="h-10 p-4 rounded-lg bg-gray-100"
           />
@@ -104,7 +104,7 @@ const BudgetForm = () => {
           <label className="text-sm font-semibold">Mensaje</label>
           <textarea
             name="mensaje"
-            placeholder="Quiero formar parte de Blindaje..."
+            placeholder="Estimados. Me gustaría consultar por su servicio de seguridad para..."
             required
             rows="4"
             className="p-4 rounded-lg bg-gray-100"
