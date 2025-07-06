@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
-import { validateTextFields } from "@/lib/validateForm";
+import { validateFormFields } from "@/lib/valideteFormFields.js";
 
 function sanitize(input) {
   return input.replace(/[<>&'"]/g, (c) => {
@@ -43,7 +43,7 @@ export async function POST(req) {
     const asunto = formData.get("asunto");
     const mensaje = formData.get("mensaje");
 
-    const error = validateTextFields({ nombre, apellido, asunto, mensaje });
+    const error = validateFormFields({ nombre, apellido, asunto, mensaje });
     if (error) {
       return NextResponse.json({ error }, { status: 400 });
     }
