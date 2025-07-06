@@ -1,5 +1,18 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { validateTextFields } from "@/lib/validateForm";
+
+function sanitize(input) {
+  return input.replace(/[<>&'"]/g, (c) => {
+    return {
+      "<": "&lt;",
+      ">": "&gt;",
+      "&": "&amp;",
+      "'": "&#39;",
+      '"': "&quot;",
+    }[c];
+  });
+}
 
 export async function POST(req) {
   try {
@@ -21,7 +34,6 @@ export async function POST(req) {
       }
     ).then((res) => res.json());
 
-
     if (!captchaRes.success) {
       return NextResponse.json({ error: "Captcha inválido" }, { status: 400 });
     }
@@ -31,6 +43,11 @@ export async function POST(req) {
     const asunto = formData.get("asunto");
     const mensaje = formData.get("mensaje");
 
+    const error = validateTextFields({ nombre, apellido, asunto, mensaje });
+    if (error) {
+      return NextResponse.json({ error }, { status: 400 });
+    }
+
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const response = await resend.emails.send({
@@ -38,9 +55,9 @@ export async function POST(req) {
       to: process.env.RESEND_TO_SEGURIDAD,
       subject: `${asunto}`,
       html: `
-      <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
+      <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
       <p><strong>Mensaje:</strong></p>
-      <p>${mensaje}</p>
+      <p>${sanitize(mensaje)}</p>
     `,
     });
 

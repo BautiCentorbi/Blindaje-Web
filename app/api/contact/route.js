@@ -1,6 +1,20 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { Buffer } from "buffer";
+import { validateFormFields } from "@/lib/valideteFormFields.js";
+import { validateFormFile } from "@/lib/validateFile.js";
+
+function sanitize(input) {
+  return input.replace(/[<>&'"]/g, (c) => {
+    return {
+      "<": "&lt;",
+      ">": "&gt;",
+      "&": "&amp;",
+      "'": "&#39;",
+      '"': "&quot;",
+    }[c];
+  });
+}
 
 export async function POST(req) {
   try {
@@ -23,7 +37,6 @@ export async function POST(req) {
       }
     ).then((res) => res.json());
 
-
     if (!captchaRes.success) {
       return NextResponse.json({ error: "Captcha inválido" }, { status: 400 });
     }
@@ -33,23 +46,18 @@ export async function POST(req) {
     const asunto = formData.get("asunto");
     const mensaje = formData.get("mensaje");
 
+    const error = validateFormFields({ nombre, apellido, asunto, mensaje });
+    if (error) {
+      return NextResponse.json({ error }, { status: 400 });
+    }
+
+    const fileError = validateFormFile(archivo); // solo en contacto
+    if (fileError) {
+      return NextResponse.json({ error: fileError }, { status: 400 });
+    }
     if (!archivo || typeof archivo.arrayBuffer !== "function") {
       return NextResponse.json(
         { error: "Archivo inválido o faltante" },
-        { status: 400 }
-      );
-    }
-
-    if (archivo.type !== "application/pdf") {
-      return NextResponse.json(
-        { error: "Formato de archivo no permitido" },
-        { status: 400 }
-      );
-    }
-
-    if (archivo.size > 5 * 1024 * 1024) {
-      return NextResponse.json(
-        { error: "Archivo demasiado grande" },
         { status: 400 }
       );
     }
@@ -63,9 +71,9 @@ export async function POST(req) {
       to: process.env.RESEND_TO_RRHH,
       subject: `${asunto}`,
       html: `
-      <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
+      <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
       <p><strong>Mensaje:</strong></p>
-      <p>${mensaje}</p>
+      <p>${sanitize(mensaje)}</p>
     `,
       attachments: [
         {
