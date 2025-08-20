@@ -2,18 +2,24 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import MainSection from "./components/MainSection/MainSection";
 
 export const metadata = {
-  title: 'Blindaje Seguridad Privada Integral',
+  title: 'Blindaje: Empresa de Seguridad Privada en Mendoza',
   description:
-    'Protección personalizada en Mendoza. Servicios de seguridad privada, vigilancia, monitoreo, alarmas y tecnología de punta. Cotizá con Blindaje.',
+    'Seguridad Privada en Mendoza, Servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta. Redefinimos lo que significa Protección Personalizada.',
   keywords: [
     'Blindaje',
-    'Seguridad privada Mendoza',
+    'Seguridad privada',
+    'Seguridad en Mendoza',
+    'Seguridad profesional',
+    'Vigilancia privada',
+    'Seguridad Privada en Mendoza',
+    'Seguridad Privada Integral',
     'Empresa de vigilancia',
     'Monitoreo de alarmas',
     'Cámaras de seguridad',
     'Vigilancia profesional',
     'Protección personalizada',
     'Blindaje seguridad',
+    'Protección de propiedades',
     'Servicios de seguridad en Mendoza',
   ],
   metadataBase: new URL('https://blindaje.com.ar'),
