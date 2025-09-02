@@ -15,7 +15,7 @@ export const metadata = {
     template: "%s | Blindaje",
   },
   description:
-    "Blindaje ofrece servicios de seguridad privada, vigilancia, alarmas y soluciones integrales en toda la provincia de Mendoza. Nuestro equipo de profesionales garantiza la seguridad de tus propiedades y personas con tecnología de punta y experiencia en el mercado.",
+    "Seguridad Privada en Mendoza, Servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.",
   keywords: [
     "Seguridad privada",
     "Vigilancia",
