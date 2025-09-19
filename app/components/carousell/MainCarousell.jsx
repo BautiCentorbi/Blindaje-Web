@@ -22,7 +22,7 @@ const MainCarousell = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center gap-4">
-      <div className="relative w-full h-96 md:h-[450px] 2xl:h-[600px] overflow-hidden rounded-2xl">
+      <div className="relative w-full h-96 md:h-[450px] 2xl:h-[700px] overflow-hidden rounded-2xl">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeImage}

@@ -4,7 +4,7 @@ import MainSection from "./components/MainSection/MainSection";
 export const metadata = {
   title: 'Blindaje: Empresa de Seguridad Privada en Mendoza',
   description:
-    'Seguridad Privada en Mendoza, Servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.',
+    'Seguridad Privada en Mendoza, servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.',
   keywords: [
     'Blindaje',
     'Seguridad privada',
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     title: 'Blindaje Seguridad Privada',
     description:
-      'Servicios de protección y vigilancia con atención humana y tecnología de vanguardia en toda Mendoza.',
+      'Servicios de protección y vigilancia con atención humana y tecnología de vanguardia en todo Mendoza.',
     url: 'https://blindaje.com.ar',
     siteName: 'Blindaje',
     images: [

@@ -15,7 +15,7 @@ export const metadata = {
     template: "%s | Blindaje",
   },
   description:
-    "Seguridad Privada en Mendoza, Servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.",
+    "Seguridad Privada en Mendoza, servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.",
   keywords: [
     "Seguridad privada",
     "Vigilancia",
