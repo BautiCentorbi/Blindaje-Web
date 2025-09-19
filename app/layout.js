@@ -37,7 +37,7 @@ export const metadata = {
   openGraph: {
     title: "Blindaje Seguridad Privada",
     description:
-      "Servicios de seguridad personalizados en Mendoza. Vigilancia, alarmas y monitoreo profesional.",
+      "Servicios de seguridad privada personalizados en Mendoza. Vigilancia, alarmas y monitoreo profesional.",
     url: "https://blindaje.com.ar",
     siteName: "Blindaje",
     images: [
