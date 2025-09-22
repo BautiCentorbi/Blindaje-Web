@@ -2,7 +2,7 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import MainSection from "./components/MainSection/MainSection";
 
 export const metadata = {
-  title: 'Seguridad Privada en Mendoza',
+  title: 'Blindaje: Empresa deSeguridad Privada en Mendoza',
   description:
     'Seguridad Privada en Mendoza, servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.',
   keywords: [
