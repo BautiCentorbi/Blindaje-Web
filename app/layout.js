@@ -70,7 +70,6 @@ export const metadata = {
     statusBarStyle: "black-translucent",
     capable: true,
   },
-  robots: { index: true, follow: true }
 };
 
 export default function RootLayout({ children }) {
