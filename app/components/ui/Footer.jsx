@@ -6,6 +6,7 @@ import {
   FaLinkedin,
   FaWhatsapp,
 } from "react-icons/fa";
+import NAP from "./NAP";
 
 const Footer = () => {
   return (
@@ -107,9 +108,10 @@ const Footer = () => {
         </div>
         <hr className="border-slate-600 hidden md:flex md:w-48" />
       </div>
-      <span className="text-slate-500 text-center text-sm md:text-lg">
-        Blindaje® 2025 - Todos los derechos reservados
-      </span>
+      <NAP />
+      <div className="text-slate-500 text-center text-sm md:text-lg">
+        © {new Date().getFullYear()} Blindaje — Seguridad Privada Integral
+      </div>
     </footer>
   );
 };

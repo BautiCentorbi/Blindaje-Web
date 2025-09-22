@@ -11,11 +11,11 @@ const HankenGrotesk = Hanken_Grotesk({
 
 export const metadata = {
   title: {
-    default: "Blindaje - Seguridad Privada Integral",
+    default: "Seguridad Privada en Mendoza | Blindaje",
     template: "%s | Blindaje",
   },
   description:
-    "Seguridad Privada en Mendoza, servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.",
+    "Seguridad privada en Mendoza: vigilancia física, monitoreo de alarmas, CCTV y custodios. Atención profesional y cobertura en toda la provincia.",
   keywords: [
     "Seguridad privada",
     "Vigilancia",
@@ -35,9 +35,9 @@ export const metadata = {
   ],
   metadataBase: new URL("https://blindaje.com.ar"),
   openGraph: {
-    title: "Blindaje Seguridad Privada",
+    title: "Blindaje — Seguridad Privada en Mendoza",
     description:
-      "Servicios de seguridad privada personalizados en Mendoza. Vigilancia, alarmas y monitoreo profesional.",
+      "Vigilancia, alarmas, CCTV y custodias. Cobertura provincial.",
     url: "https://blindaje.com.ar",
     siteName: "Blindaje",
     images: [
@@ -70,11 +70,12 @@ export const metadata = {
     statusBarStyle: "black-translucent",
     capable: true,
   },
+  robots: { index: true, follow: true }
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="es-AR">
       <body className={`${HankenGrotesk.className} scroll-smooth`}>
         <NavBar />
         {children}

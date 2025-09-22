@@ -1,4 +1,5 @@
 import HeroSection from "./components/HeroSection/HeroSection";
+import LocalSchema from "./components/LocalSchema";
 import MainSection from "./components/MainSection/MainSection";
 
 export const metadata = {
@@ -55,6 +56,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <LocalSchema />
       <HeroSection />
       <MainSection />
     </>
