@@ -76,3 +76,38 @@ body {
     @apply bg-background text-foreground;
   }
 }
+/* globals.css (o donde tengas tus estilos globales Tailwind) */
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* movemos exactamente una pista completa hacia la izquierda */
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Marquee infinito: mueve exactamente la mitad porque duplicamos el contenido 2x */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Utilidad reutilizable */
+.marquee-animate {
+  animation: marquee-x 28s linear infinite;
+  will-change: transform;
+}
+
+/* Respeta usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-animate {
+    animation: none !important;
+    transform: translateX(0) !important;
+  }
+}
+
+
+

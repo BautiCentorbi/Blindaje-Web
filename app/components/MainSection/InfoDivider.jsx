@@ -29,44 +29,44 @@ const InfoDivider = () => {
   ];
 
   return (
-    <motion.div
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 2xl:mb-12 pb-20 max-w-7xl mx-auto px-2 text-center"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { staggerChildren: 0.2 },
-        },
-      }}
-    >
-      {items.map((item, i) => {
-        const Icon = item.icon;
-        return (
-          <motion.div
-            key={i}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="group flex flex-col items-center justify-center bg-gray-200 p-6 rounded-xl shadow transition-all duration-300"
-          >
-            <Icon
-              className="w-8 h-8 md:w-10 md:h-10 2xl:w-12 2xl:h-12 text-gray-700 group-hover:text-dk_primary transition-colors duration-300"
-            />
-            <h3 className="text-lg 2xl:text-xl font-bold mt-4 uppercase">
-              {item.title}
-            </h3>
-            <p className="text-sm 2xl:text-lg text-black/80">{item.desc}</p>
-          </motion.div>
-        );
-      })}
-    </motion.div>
+    <section className="dk:text-white px-8 md:px-32 pt-4 md:pt-8 2xl:pt-12">
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 2xl:mb-12 pb-20 max-w-7xl mx-auto px-2 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { staggerChildren: 0.2 },
+          },
+        }}
+      >
+        {items.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="group flex flex-col items-center justify-center bg-gray-200 p-6 rounded-xl shadow transition-all duration-300"
+            >
+              <Icon className="w-8 h-8 md:w-10 md:h-10 2xl:w-12 2xl:h-12 text-gray-700 group-hover:text-dk_primary transition-colors duration-300" />
+              <h3 className="text-lg 2xl:text-xl font-bold mt-4 uppercase">
+                {item.title}
+              </h3>
+              <p className="text-sm 2xl:text-lg text-black/80">{item.desc}</p>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </section>
   );
 };
 

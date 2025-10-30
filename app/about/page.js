@@ -65,9 +65,6 @@ const page = () => {
         <hr className="border-gray-600 border-1 opacity-20 my-8 md:my-2 2xl:my-8 w-36 md:w-64" />
         <GoalsSection/>
         <DiferentiationSection />
-        <div className="h-96 md:h-[300px] 2xl:h-[500px] rounded-lg">
-          <Image className="rounded-lg object-contain h-full w-full" src={"/images/slide6.webp"} alt="Guardia de seguridad de Blindaje, al lado de una cancha de basketball, controlando un partido de semifinal del Torneo Superliga, en la cancha de Atenas Sport Club, Mendoza, Argentina." width={700} height={120} />
-        </div>
         <FocusSection/>
       </section>
       <section></section>

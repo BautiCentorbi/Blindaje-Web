@@ -1,5 +1,9 @@
+import MainCarousell from "./components/carousell/MainCarousell";
 import HeroSection from "./components/HeroSection/HeroSection";
+import InfoDivider from "./components/MainSection/InfoDivider";
 import MainSection from "./components/MainSection/MainSection";
+import MethodologyDivider from "./components/MainSection/MethodologyDivider";
+import ClientMarquee from "./components/TrustedBy/ClientMarquee";
 
 export const metadata = {
   title: 'Blindaje: Empresa deSeguridad Privada en Mendoza',
@@ -56,7 +60,17 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <InfoDivider />
       <MainSection />
+      <ClientMarquee />
+      <MethodologyDivider />
+      <section className="px-8 md:px-32 max-w-screen overflow-hidden text-white rounded-lg my-32">
+        <article className="flex flex-col w-full">
+          <figure className="relative w-full h-full">
+            <MainCarousell />
+          </figure>
+        </article>
+      </section>
     </>
   );
 }
