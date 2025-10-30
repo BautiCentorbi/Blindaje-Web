@@ -6,7 +6,7 @@ import MethodologyDivider from "./components/MainSection/MethodologyDivider";
 import ClientMarquee from "./components/TrustedBy/ClientMarquee";
 
 export const metadata = {
-  title: 'Blindaje: Empresa deSeguridad Privada en Mendoza',
+  title: 'Blindaje: Empresa de Seguridad Privada en Mendoza',
   description:
     'Seguridad Privada en Mendoza, servicios de seguridad, vigilancia, monitoreo, custodios, alarmas y tecnología de punta.',
   keywords: [
