@@ -9,7 +9,7 @@ export default function ClientMarquee() {
   {
     src: "/logos/Logo-Sheraton.webp",
     alt: "Sheraton Mendoza Hotel",
-    className: "h-30 w-90 md:h-[40px] md:w-[120px] lg:h-50 lg:w-150",
+    className: "h-[40px] w-[120px] lg:h-50 lg:w-150",
   },
   {
     src: "/logos/Logo-Totem_Boulevard.webp",
@@ -18,6 +18,7 @@ export default function ClientMarquee() {
   {
     src: "/logos/Logo-FBPM.webp",
     alt: "Federación de Básquet de la Provincia de Mendoza",
+    className: "h-[40px] w-[120px] lg:h-50 lg:w-150"
   },
   {
     src: "/logos/Logo-iMatorras.webp",
@@ -65,7 +66,7 @@ export default function ClientMarquee() {
         <ul className="flex items-center gap-8 md:gap-12 lg:gap-16 shrink-0 px-4 py-6">
           {track.map((logo, i) => (
             <li key={`set1-${i}`} className="flex items-center justify-center">
-              <div className="relative h-[30px] w-[90px] lg:h-[50px] lg:w-[150px] opacity-80 hover:opacity-100 transition-opacity">
+              <div className="relative h-[40px] w-[120px] lg:h-[50px] lg:w-[150px] opacity-80 hover:opacity-100 transition-opacity">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -84,7 +85,7 @@ export default function ClientMarquee() {
         <ul className="flex items-center gap-8 md:gap-12 lg:gap-16 shrink-0 px-4 py-6">
           {track.map((logo, i) => (
             <li key={`set2-${i}`} className="flex items-center justify-center">
-              <div className="relative h-[30px] w-[90px] lg:h-[50px] lg:w-[150px] opacity-80 hover:opacity-100 transition-opacity">
+              <div className="relative h-[40px] w-[120px] lg:h-[50px] lg:w-[150px] opacity-80 hover:opacity-100 transition-opacity">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
