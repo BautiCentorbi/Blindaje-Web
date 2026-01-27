@@ -29,8 +29,8 @@ const navItems = [
       { label: "Nuestro enfoque", href: "/about#enfoque" },
     ],
   },
-  { label: "Servicios", ariaLabel: "Ir a Servicios" ,href: "/services" },
-  { label: "Contacto", ariaLabel: "Ir a Contacto" ,href: "/contact" },
+  { label: "Servicios", ariaLabel: "Ir a Servicios", href: "/services" },
+  { label: "Contacto", ariaLabel: "Ir a Contacto", href: "/contact" },
 ];
 
 const NavBar = () => {
@@ -58,7 +58,7 @@ const NavBar = () => {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-colors duration-300",
-        scrolled ? "bg-background/80" : "bg-transparent"
+        scrolled ? "bg-background/80" : "bg-transparent",
       )}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 md:py-1 flex items-center justify-between">
@@ -68,7 +68,11 @@ const NavBar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
         >
-          <Link aria-label="Ir a Inicio - Logo de Blindaje" href="/" className="flex items-center gap-2">
+          <Link
+            aria-label="Ir a Inicio - Logo de Blindaje"
+            href="/"
+            className="flex items-center gap-2"
+          >
             <Image
               src="/images/Logo_Blindaje.svg"
               alt="Símbolo del Logo Blindaje"
@@ -97,10 +101,12 @@ const NavBar = () => {
                         className={cn(
                           navigationMenuTriggerStyle(),
                           isActive(item.href) &&
-                            "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary"
+                            "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary",
                         )}
                       >
-                        <Link aria-label={item.ariaLabel} href={item.href}>{item.label}</Link>
+                        <Link aria-label={item.ariaLabel} href={item.href}>
+                          {item.label}
+                        </Link>
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ul className="grid gap-2 p-4 w-56">
@@ -118,17 +124,22 @@ const NavBar = () => {
                       </NavigationMenuContent>
                     </>
                   ) : (
-                    <Link aria-label={item.ariaLabel} href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={cn(
-                          navigationMenuTriggerStyle(),
-                          isActive(item.href) &&
-                            "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary"
-                        )}
+                    <NavigationMenuLink
+                      asChild
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        isActive(item.href) &&
+                          "relative text-primary font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary",
+                      )}
+                    >
+                      <Link
+                        aria-label={item.ariaLabel}
+                        href={item.href}
+                        
                       >
                         {item.label}
-                      </NavigationMenuLink>
-                    </Link>
+                      </Link>
+                    </NavigationMenuLink>
                   )}
                 </NavigationMenuItem>
               ))}
