@@ -93,6 +93,24 @@ const ContactForm = () => {
           />
         </div>
 
+    <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
+          <label className="text-sm font-semibold">Teléfono</label>
+
+          <div className="flex">
+            <span className="flex items-center px-3 rounded-l-lg bg-gray-200 text-sm font-medium text-gray-700">
+              +54
+            </span>
+            <input
+              name="telefono"
+              type="tel"
+              placeholder="261 555 1234"
+              required
+              pattern="[0-9\s]{8,15}"
+              className="h-10 p-4 rounded-r-lg bg-gray-100 w-full"
+            />
+          </div>
+        </div>
+
         <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
           <label className="text-sm font-semibold">Asunto</label>
           <input

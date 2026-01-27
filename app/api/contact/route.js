@@ -44,10 +44,11 @@ export async function POST(req) {
     const nombre = formData.get("nombre");
     const apellido = formData.get("apellido");
     const email = formData.get("email");
+    const telefono = formData.get("telefono");
     const asunto = formData.get("asunto");
     const mensaje = formData.get("mensaje");
 
-    const error = validateFormFields({ nombre, apellido, email, asunto, mensaje });
+    const error = validateFormFields({ nombre, apellido, email, telefono, asunto, mensaje });
     if (error) {
       return NextResponse.json({ error }, { status: 400 });
     }
@@ -74,6 +75,7 @@ export async function POST(req) {
       html: `
       <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
       <p><strong>Email:</strong> ${sanitize(email)}</p>
+      <p><strong>Teléfono:</strong> ${sanitize(telefono)}</p>
       <p><strong>Asunto:</strong> ${sanitize(asunto)}</p>
       <p><strong>Mensaje:</strong></p>
       <p>${sanitize(mensaje)}</p>
