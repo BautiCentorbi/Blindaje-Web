@@ -91,6 +91,17 @@ const BudgetForm = () => {
         </div>
 
         <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
+          <label className="text-sm font-semibold">Email</label>
+          <input
+            name="email"
+            className="h-10 p-4 rounded-lg bg-gray-100"
+            type="email"
+            placeholder="rV2bD@example.com"
+            required
+          />
+        </div>
+
+        <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
           <label className="text-sm font-semibold">Asunto</label>
           <input
             name="asunto"
