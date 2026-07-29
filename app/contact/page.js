@@ -52,7 +52,7 @@ export default function Contact() {
           <FaWhatsapp className="w-10 h-10 md:w-8 md:h-8 2xl:w-10 2xl:h-10 fill-green-600" />
           <div>
             <h3 className="text-lg md:text-xl font-bold mb-2">
-              Nuestros Whatsapp:
+              Julio Centorbi:
             </h3>
             <div className="flex gap-2 mb-2">
               <Link
@@ -63,28 +63,6 @@ export default function Contact() {
                 className="text-green-600 font-bold"
               >
                 +54 9 261 383 3783
-              </Link>
-            </div>
-            <div className="flex gap-2 mb-2">
-              <Link
-                target="_blank"
-                aria-label="Whatsapp de Blindaje - 2"
-                rel="noopener noreferrer"
-                href="https://wa.me/5492612062425"
-                className="text-green-600 font-bold"
-              >
-                +54 9 261 206 2425
-              </Link>{" "}
-            </div>
-            <div className="flex gap-2">
-              <Link
-                target="_blank"
-                aria-label="Whatsapp de Blindaje - 3"
-                rel="noopener noreferrer"
-                href="https://wa.me/5492634598916"
-                className="text-green-600 font-bold"
-              >
-                +54 9 263 459 8916
               </Link>
             </div>
           </div>
