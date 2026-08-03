@@ -63,9 +63,9 @@ export default function Home() {
       <HeroSection />
       <InfoDivider />
       <MainSection />
-      <ClientMarquee />
-      <MethodologyDivider />
       <BrandUniverseSection />
+      <MethodologyDivider />
+      <ClientMarquee />
       <section className="px-8 md:px-32 max-w-screen overflow-hidden text-white rounded-lg my-32">
         <article className="flex flex-col w-full">
           <figure className="relative w-full h-full">
