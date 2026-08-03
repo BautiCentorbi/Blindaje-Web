@@ -4,6 +4,7 @@ import InfoDivider from "./components/MainSection/InfoDivider";
 import MainSection from "./components/MainSection/MainSection";
 import MethodologyDivider from "./components/MainSection/MethodologyDivider";
 import ClientMarquee from "./components/TrustedBy/ClientMarquee";
+import BrandUniverseSection from "./components/BrandUniverse/BrandUniverseSection";
 
 export const metadata = {
   title: 'Blindaje: Empresa de Seguridad Privada en Mendoza',
@@ -64,6 +65,7 @@ export default function Home() {
       <MainSection />
       <ClientMarquee />
       <MethodologyDivider />
+      <BrandUniverseSection />
       <section className="px-8 md:px-32 max-w-screen overflow-hidden text-white rounded-lg my-32">
         <article className="flex flex-col w-full">
           <figure className="relative w-full h-full">
