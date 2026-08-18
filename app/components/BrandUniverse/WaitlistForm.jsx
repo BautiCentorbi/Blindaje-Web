@@ -3,11 +3,13 @@
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Send } from "lucide-react";
+import { useToast } from "@/app/components/ui/ToastProvider";
 
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle"); // idle | loading | success
   const recaptchaRef = useRef(null);
+  const { showToast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,11 +30,25 @@ const WaitlistForm = () => {
 
       if (result.ok) {
         setStatus("success");
+        showToast({
+          message: result.alreadyRegistered
+            ? "Ya estabas anotado en la lista de Blindaje Digital. Te vamos a avisar igual."
+            : "¡Listo! Te avisamos por email cuando Blindaje Digital esté disponible.",
+          type: "success",
+        });
       } else {
-        setStatus("error");
+        setStatus("idle");
+        showToast({
+          message: result.error || "No pudimos guardar tu email.",
+          type: "error",
+        });
       }
     } catch (error) {
-      setStatus("error");
+      setStatus("idle");
+      showToast({
+        message: "No pudimos guardar tu email. Probá de nuevo en un momento.",
+        type: "error",
+      });
     } finally {
       recaptchaRef.current?.reset();
     }
@@ -79,12 +95,6 @@ const WaitlistForm = () => {
         size="invisible"
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
       />
-
-      {status === "error" && (
-        <p className="text-xs text-white/90 sm:w-full">
-          No pudimos guardar tu email. Probá de nuevo en un momento.
-        </p>
-      )}
     </form>
   );
 };
