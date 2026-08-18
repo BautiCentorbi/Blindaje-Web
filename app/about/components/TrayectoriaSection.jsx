@@ -17,7 +17,7 @@ const properties = [
 const TrayectoriaSection = () => {
   return (
     <article
-      className="dk:text-white px-4 md:px-36 flex flex-col items-center gap-8 text-lg mt-4 md:mt-16"
+      className="dk:text-white px-4 md:px-60 flex flex-col items-center gap-8 text-lg mt-4 md:mt-16"
       id="trayectoria"
     >
       <h2 className="text-3xl text-center mb-2">
