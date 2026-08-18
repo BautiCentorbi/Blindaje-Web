@@ -3,6 +3,7 @@ import NavBar from "./components/ui/NavBar";
 import { Hanken_Grotesk } from "next/font/google";
 import Footer from "./components/ui/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import { ToastProvider } from "./components/ui/ToastProvider";
 
 const HankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -76,10 +77,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es-AR">
       <body className={`${HankenGrotesk.className} scroll-smooth`}>
-        <NavBar />
-        {children}
-        <WhatsAppButton />
-        <Footer />
+        <ToastProvider>
+          <NavBar />
+          {children}
+          <WhatsAppButton />
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );

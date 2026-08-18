@@ -54,36 +54,51 @@ export async function POST(req) {
     // enviarle la campaña de lanzamiento más adelante. Usa una API
     // key separada (con permiso de Audience/Contacts) porque
     // RESEND_API_KEY está restringida a solo enviar emails. La API
-    // no lanza excepción en errores: devuelve { data, error }.
+    // no lanza excepción en errores: devuelve { data, error }, y
+    // "create" hace upsert silencioso (no avisa si ya existía), por
+    // eso chequeamos con "get" antes de crear.
+    let alreadyRegistered = false;
     if (process.env.RESEND_WAITLIST_API_KEY && process.env.RESEND_WAITLIST_AUDIENCE_ID) {
       const resendContacts = new Resend(process.env.RESEND_WAITLIST_API_KEY);
-      const { error: contactError } = await resendContacts.contacts.create({
-        email,
-        unsubscribed: false,
-        audienceId: process.env.RESEND_WAITLIST_AUDIENCE_ID,
-      });
+      const audienceId = process.env.RESEND_WAITLIST_AUDIENCE_ID;
 
-      // Un contacto duplicado no debería romper la experiencia del
-      // usuario: ya está en la lista, seguimos igual.
-      if (contactError && !/already exists|duplicate/i.test(contactError.message || "")) {
-        return NextResponse.json(
-          { error: "No pudimos guardar tu email." },
-          { status: 500 }
-        );
+      const { data: existing } = await resendContacts.contacts.get({
+        audienceId,
+        email,
+      });
+      alreadyRegistered = Boolean(existing);
+
+      if (!alreadyRegistered) {
+        const { error: contactError } = await resendContacts.contacts.create({
+          email,
+          unsubscribed: false,
+          audienceId,
+        });
+
+        if (contactError) {
+          return NextResponse.json(
+            { error: "No pudimos guardar tu email." },
+            { status: 500 }
+          );
+        }
       }
     }
 
-    await resend.emails.send({
-      from: "Blindaje Digital <noreply@blindaje.com.ar>",
-      to: process.env.RESEND_TO_SEGURIDAD,
-      subject: "Nuevo interesado en Blindaje Digital",
-      html: `
-      <p>Un visitante del sitio quiere que le avisen cuando Blindaje Digital esté disponible.</p>
-      <p><strong>Email:</strong> ${sanitize(email)}</p>
-    `,
-    });
+    // Solo notificamos por mail a los interesados nuevos, para no
+    // generar ruido cada vez que alguien reintenta con el mismo email.
+    if (!alreadyRegistered) {
+      await resend.emails.send({
+        from: "Blindaje Digital <noreply@blindaje.com.ar>",
+        to: process.env.RESEND_TO_SEGURIDAD,
+        subject: "Nuevo interesado en Blindaje Digital",
+        html: `
+        <p>Un visitante del sitio quiere que le avisen cuando Blindaje Digital esté disponible.</p>
+        <p><strong>Email:</strong> ${sanitize(email)}</p>
+      `,
+      });
+    }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, alreadyRegistered });
   } catch (error) {
     return NextResponse.json(
       { error: "Error en el servidor" },

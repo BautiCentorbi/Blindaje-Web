@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Abril_Fatface } from "next/font/google";
 import MainButton from "@/app/components/ui/MainButton";
+import { useToast } from "@/app/components/ui/ToastProvider";
 
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
 const BudgetForm = () => {
   const [loading, setLoading] = useState(false);
   const recaptchaRef = useRef(null);
+  const { showToast } = useToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,13 +31,13 @@ const BudgetForm = () => {
       const result = await res.json();
 
       if (result.ok) {
-        alert("Mensaje enviado correctamente.");
+        showToast({ message: "Mensaje enviado correctamente.", type: "success" });
         e.target.reset();
       } else {
-        alert(result.error || "Error al enviar.");
+        showToast({ message: result.error || "Error al enviar.", type: "error" });
       }
     } catch (error) {
-      alert("Error en el servidor.");
+      showToast({ message: "Error en el servidor.", type: "error" });
     } finally {
       recaptchaRef.current.reset();
       setLoading(false);
