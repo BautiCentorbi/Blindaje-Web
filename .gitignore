@@ -35,6 +35,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# internal upgrade notes (not for staging)
+/public/upgrades
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

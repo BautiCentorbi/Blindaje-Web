@@ -31,6 +31,11 @@ const navItems = [
   },
   { label: "Servicios", ariaLabel: "Ir a Servicios", href: "/services" },
   { label: "Contacto", ariaLabel: "Ir a Contacto", href: "/contact" },
+  {
+    label: "Trabajá con nosotros",
+    ariaLabel: "Ir a Trabajá con nosotros",
+    href: "/trabaja-con-nosotros",
+  },
 ];
 
 const NavBar = () => {

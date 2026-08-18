@@ -21,16 +21,16 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/cotizaciones`,
+      url: `${baseUrl}/contact`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/trabaja-con-nosotros`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.5,
     },
   ];
 }

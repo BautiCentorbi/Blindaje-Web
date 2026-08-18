@@ -8,7 +8,7 @@ import MainButton from "@/app/components/ui/MainButton";
 
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
 
-const BudgetForm = () => {
+const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const recaptchaRef = useRef(null);
 
@@ -21,7 +21,7 @@ const BudgetForm = () => {
     formData.append("token", token);
 
     try {
-      const res = await fetch("/api/budget", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         body: formData,
       });
@@ -50,10 +50,10 @@ const BudgetForm = () => {
         transition={{ duration: 0.5 }}
         className={`text-center text-4xl md:text-4xl 2xl:text-5xl font-extrabold mb-6`}
       >
-        Solicitá una {""}
         <span className={`${AbrilFatface.className}  text-dk_primary `}>
-          Cotización
+          Sumate{" "}
         </span>
+        al equipo
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -61,7 +61,9 @@ const BudgetForm = () => {
         transition={{ duration: 0.5 }}
         className="text-center text-muted-foreground mb-8"
       >
-        Envianos tus datos y te contactaremos lo antes posible.
+        Sumamos personal para guardias, control de accesos y roles operativos
+        en toda la provincia de Mendoza. Contanos tu perfil y adjuntá tu CV;
+        te contactaremos si tu postulación encaja con una búsqueda activa.
       </motion.p>
 
       <motion.form
@@ -71,51 +73,55 @@ const BudgetForm = () => {
         transition={{ duration: 0.6 }}
         className="bg-white dark:bg-zinc-900 shadow-xl rounded-2xl p-8 space-y-6 gap-8"
       >
-        <div className="flex flex-col gap-2 mb-4 md:mb-4 2xl:mb-4">
-          <label className="text-sm font-semibold">Nombre</label>
-          <input
-            name="nombre"
-            placeholder="Juan"
-            required
-            className="h-10 p-4 rounded-lg bg-gray-100"
-          />
-        </div>
-        <div className="flex flex-col gap-2 mb- md:mb-2 2xl:mb-4">
-          <label className="text-sm font-semibold">Apellido</label>
-          <input
-            name="apellido"
-            placeholder="Doe"
-            required
-            className="h-10 p-4 rounded-lg bg-gray-100"
-          />
-        </div>
-
-        <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
-          <label className="text-sm font-semibold">Email</label>
-          <input
-            name="email"
-            className="h-10 p-4 rounded-lg bg-gray-100"
-            type="email"
-            placeholder="rV2bD@example.com"
-            required
-          />
-        </div>
-
-        <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
-          <label className="text-sm font-semibold">Teléfono</label>
-
-          <div className="flex">
-            <span className="flex items-center px-3 rounded-l-lg bg-gray-200 text-sm font-medium text-gray-700">
-              +54
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-2 mb-4 md:mb-4 2xl:mb-4">
+            <label className="text-sm font-semibold">Nombre</label>
             <input
-              name="telefono"
-              type="tel"
-              placeholder="261 555 1234"
+              name="nombre"
+              placeholder="Juan"
               required
-              pattern="[0-9\s]{8,15}"
-              className="h-10 p-4 rounded-r-lg bg-gray-100 w-full"
+              className="h-10 p-4 rounded-lg bg-gray-100"
             />
+          </div>
+          <div className="flex flex-col gap-2 mb- md:mb-2 2xl:mb-4">
+            <label className="text-sm font-semibold">Apellido</label>
+            <input
+              name="apellido"
+              placeholder="Doe"
+              required
+              className="h-10 p-4 rounded-lg bg-gray-100"
+            />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
+            <label className="text-sm font-semibold">Email</label>
+            <input
+              name="email"
+              placeholder="nombre@example.com"
+              type="email"
+              required
+              className="h-10 p-4 rounded-lg bg-gray-100"
+            />
+          </div>
+
+          <div className="flex flex-col gap-2 mb-4 md:mb-2 2xl:mb-4">
+            <label className="text-sm font-semibold">Teléfono</label>
+
+            <div className="flex">
+              <span className="flex items-center px-3 rounded-l-lg bg-gray-200 text-sm font-medium text-gray-700">
+                +54
+              </span>
+              <input
+                name="telefono"
+                type="tel"
+                placeholder="261 555 1234"
+                required
+                pattern="[0-9\s]{8,15}"
+                className="h-10 p-4 rounded-r-lg bg-gray-100 w-full"
+              />
+            </div>
           </div>
         </div>
 
@@ -123,7 +129,7 @@ const BudgetForm = () => {
           <label className="text-sm font-semibold">Asunto</label>
           <input
             name="asunto"
-            placeholder="COTIZACIÓN: ..."
+            placeholder="PUESTO: ..."
             required
             className="h-10 p-4 rounded-lg bg-gray-100"
           />
@@ -133,13 +139,25 @@ const BudgetForm = () => {
           <label className="text-sm font-semibold">Mensaje</label>
           <textarea
             name="mensaje"
-            placeholder="Estimados. Me gustaría consultar por su servicio de seguridad para..."
+            placeholder="Quiero formar parte de Blindaje..."
             required
             rows="4"
             className="p-4 rounded-lg bg-gray-100"
           />
         </div>
 
+        <div className="flex flex-col gap-2">
+          <label className="text-sm font-semibold">
+            Adjuntar CV / archivo (PDF)
+          </label>
+          <input
+            type="file"
+            name="archivo"
+            accept="application/pdf"
+            required
+            className="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-1 file:border-dk_primary file:bg-gray-100 click:file:bg-dk_primary"
+          />
+        </div>
         <MainButton
           label={loading ? "Enviando..." : "Enviar →"}
           ariaLabel="Enviar el formulario"
@@ -155,4 +173,4 @@ const BudgetForm = () => {
   );
 };
 
-export default BudgetForm;
+export default ContactForm;
