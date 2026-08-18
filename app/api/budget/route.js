@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 import { validateFormFields } from "@/lib/valideteFormFields.js";
+import { renderEmailLayout } from "@/lib/emailTemplate.js";
 
 function sanitize(input) {
   return input.replace(/[<>&'"]/g, (c) => {
@@ -57,15 +58,20 @@ export async function POST(req) {
       from: "Cotización Blindaje <noreply@blindaje.com.ar>",
       to: process.env.RESEND_TO_SEGURIDAD,
       subject: `${asunto}`,
-      html: `
-      <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
-      <p><strong>Email:</strong> ${sanitize(email)}</p>
-      <p><strong>Teléfono:</strong> ${sanitize(telefono)}</p>
-      <p><strong>Tipo de cliente:</strong> ${sanitize(tipoCliente || "No especificado")}</p>
-      <p><strong>Asunto:</strong> ${sanitize(asunto)}</p>
-      <p><strong>Mensaje:</strong></p>
-      <p>${sanitize(mensaje)}</p>
-    `,
+      html: renderEmailLayout({
+        eyebrow: "Nueva solicitud de cotización",
+        heading: "Alguien quiere pedir presupuesto 💬",
+        intro: "Llegó una nueva consulta desde el formulario de cotización del sitio.",
+        rows: [
+          { label: "Nombre", value: `${sanitize(nombre)} ${sanitize(apellido)}` },
+          { label: "Email", value: `<a href="mailto:${sanitize(email)}" style="color:#ef781d;text-decoration:none;">${sanitize(email)}</a>` },
+          { label: "Teléfono", value: sanitize(telefono) },
+          { label: "Tipo de cliente", value: sanitize(tipoCliente || "No especificado") },
+          { label: "Asunto", value: sanitize(asunto) },
+        ],
+        messageBlock: { label: "Mensaje", value: sanitize(mensaje) },
+        cta: { label: "Responder por email", href: `mailto:${sanitize(email)}` },
+      }),
     });
 
     return NextResponse.json({ ok: true });

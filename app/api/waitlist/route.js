@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { renderEmailLayout } from "@/lib/emailTemplate.js";
 
 function sanitize(input) {
   return input.replace(/[<>&'"]/g, (c) => {
@@ -92,21 +93,29 @@ export async function POST(req) {
         from: "Blindaje Digital <noreply@blindaje.com.ar>",
         to: process.env.RESEND_TO_SEGURIDAD,
         subject: "Nuevo interesado en Blindaje Digital",
-        html: `
-        <p>Un visitante del sitio quiere que le avisen cuando Blindaje Digital esté disponible.</p>
-        <p><strong>Email:</strong> ${sanitize(email)}</p>
-      `,
+        html: renderEmailLayout({
+          eyebrow: "Blindaje Digital · Lista de espera",
+          heading: "Nuevo interesado en Blindaje Digital 🚀",
+          intro: "Un visitante del sitio dejó su email para que le avisen cuando la plataforma esté disponible.",
+          rows: [
+            { label: "Email", value: `<a href="mailto:${sanitize(email)}" style="color:#ef781d;text-decoration:none;">${sanitize(email)}</a>` },
+          ],
+        }),
       });
 
       await resend.emails.send({
         from: "Blindaje Digital <noreply@blindaje.com.ar>",
         to: email,
         subject: "Te anotamos en la lista de Blindaje Digital",
-        html: `
-        <p>¡Gracias por tu interés en Blindaje Digital!</p>
-        <p>Quedaste anotado en nuestra lista de espera. Te vamos a avisar por este mismo email en cuanto la plataforma esté disponible.</p>
-        <p>— Equipo Blindaje</p>
-      `,
+        html: renderEmailLayout({
+          eyebrow: "Blindaje Digital",
+          heading: "¡Ya estás en la lista! 🎉",
+          intro:
+            "Gracias por tu interés en Blindaje Digital, la plataforma que une control de accesos, rondas y gestión de visitas para llevar la seguridad privada a otro nivel.",
+          rows: [{ label: "Anotado con", value: sanitize(email) }],
+          footerNote:
+            "Te vamos a escribir a este mismo email apenas Blindaje Digital esté disponible. Si no fuiste vos quien dejó este email, podés ignorar este mensaje.",
+        }),
       });
     }
 

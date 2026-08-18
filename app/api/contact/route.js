@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { Buffer } from "buffer";
 import { validateFormFields } from "@/lib/valideteFormFields.js";
 import { validateFormFile } from "@/lib/validateFile.js";
+import { renderEmailLayout } from "@/lib/emailTemplate.js";
 
 function sanitize(input) {
   return input.replace(/[<>&'"]/g, (c) => {
@@ -72,14 +73,19 @@ export async function POST(req) {
       from: "Formulario Blindaje <noreply@blindaje.com.ar>",
       to: process.env.RESEND_TO_RRHH,
       subject: `${asunto}`,
-      html: `
-      <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
-      <p><strong>Email:</strong> ${sanitize(email)}</p>
-      <p><strong>Teléfono:</strong> ${sanitize(telefono)}</p>
-      <p><strong>Asunto:</strong> ${sanitize(asunto)}</p>
-      <p><strong>Mensaje:</strong></p>
-      <p>${sanitize(mensaje)}</p>
-    `,
+      html: renderEmailLayout({
+        eyebrow: "Nueva postulación",
+        heading: "Alguien quiere sumarse al equipo 👋",
+        intro: "Llegó una nueva postulación desde \"Trabajá con nosotros\". El CV va adjunto a este email.",
+        rows: [
+          { label: "Nombre", value: `${sanitize(nombre)} ${sanitize(apellido)}` },
+          { label: "Email", value: `<a href="mailto:${sanitize(email)}" style="color:#ef781d;text-decoration:none;">${sanitize(email)}</a>` },
+          { label: "Teléfono", value: sanitize(telefono) },
+          { label: "Asunto", value: sanitize(asunto) },
+        ],
+        messageBlock: { label: "Mensaje", value: sanitize(mensaje) },
+        cta: { label: "Responder por email", href: `mailto:${sanitize(email)}` },
+      }),
       attachments: [
         {
           filename: archivo.name,
