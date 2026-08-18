@@ -50,6 +50,29 @@ export async function POST(req) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
+    // Guarda el contacto en la Audience de Resend, para poder
+    // enviarle la campaña de lanzamiento más adelante. Usa una API
+    // key separada (con permiso de Audience/Contacts) porque
+    // RESEND_API_KEY está restringida a solo enviar emails. La API
+    // no lanza excepción en errores: devuelve { data, error }.
+    if (process.env.RESEND_WAITLIST_API_KEY && process.env.RESEND_WAITLIST_AUDIENCE_ID) {
+      const resendContacts = new Resend(process.env.RESEND_WAITLIST_API_KEY);
+      const { error: contactError } = await resendContacts.contacts.create({
+        email,
+        unsubscribed: false,
+        audienceId: process.env.RESEND_WAITLIST_AUDIENCE_ID,
+      });
+
+      // Un contacto duplicado no debería romper la experiencia del
+      // usuario: ya está en la lista, seguimos igual.
+      if (contactError && !/already exists|duplicate/i.test(contactError.message || "")) {
+        return NextResponse.json(
+          { error: "No pudimos guardar tu email." },
+          { status: 500 }
+        );
+      }
+    }
+
     await resend.emails.send({
       from: "Blindaje Digital <noreply@blindaje.com.ar>",
       to: process.env.RESEND_TO_SEGURIDAD,
