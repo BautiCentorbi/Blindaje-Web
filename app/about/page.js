@@ -4,6 +4,7 @@ import { Abril_Fatface } from "next/font/google";
 import FocusSection from "./components/FocusSection.jsx";
 import GoalsSection from "./components/GoalsSection.jsx";
 import DiferentiationSection from "./components/DiferentiationSection.jsx";
+import TrayectoriaSection from "./components/TrayectoriaSection.jsx";
 import { Divide } from "lucide-react";
 import Image from "next/image.js";
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
@@ -63,6 +64,7 @@ const page = () => {
           </span>
         </h1>
         <hr className="border-gray-600 border-1 opacity-20 my-8 md:my-2 2xl:my-8 w-36 md:w-64" />
+        <TrayectoriaSection />
         <GoalsSection/>
         <DiferentiationSection />
         <FocusSection/>
