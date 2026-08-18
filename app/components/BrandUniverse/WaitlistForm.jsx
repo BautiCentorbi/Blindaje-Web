@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Send } from "lucide-react";
 import { useToast } from "@/app/components/ui/ToastProvider";
@@ -8,8 +9,21 @@ import { useToast } from "@/app/components/ui/ToastProvider";
 const WaitlistForm = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle | loading | success
+  const [mounted, setMounted] = useState(false);
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
   const recaptchaRef = useRef(null);
   const { showToast } = useToast();
+
+  // Portal + carga diferida: el badge fijo del reCAPTCHA de Google
+  // se rompe si un ancestro tiene "transform" (como los motion.div
+  // de esta tarjeta), así que lo montamos directo en <body>. Y solo
+  // lo cargamos cuando alguien interactúa con el campo, para no
+  // sumarle el peso del script de Google a cada visita de la home.
+  useEffect(() => setMounted(true), []);
+
+  const ensureRecaptcha = () => {
+    if (!recaptchaReady) setRecaptchaReady(true);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +31,12 @@ const WaitlistForm = () => {
     setStatus("loading");
 
     try {
+      if (!recaptchaRef.current) {
+        // No debería pasar (el campo ya lo dispara al enfocarlo),
+        // pero si pasa, lo montamos y le pedimos un reintento.
+        ensureRecaptcha();
+        throw new Error("Danos un segundo y volvé a intentar.");
+      }
       const token = await recaptchaRef.current.executeAsync();
       const formData = new FormData();
       formData.append("email", email);
@@ -46,7 +66,10 @@ const WaitlistForm = () => {
     } catch (error) {
       setStatus("idle");
       showToast({
-        message: "No pudimos guardar tu email. Probá de nuevo en un momento.",
+        message:
+          error?.message === "Danos un segundo y volvé a intentar."
+            ? error.message
+            : "No pudimos guardar tu email. Probá de nuevo en un momento.",
         type: "error",
       });
     } finally {
@@ -77,6 +100,7 @@ const WaitlistForm = () => {
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
+        onFocus={ensureRecaptcha}
         placeholder="tu@email.com"
         className="flex-1 min-w-0 h-10 px-3 rounded-lg bg-white/15 placeholder-white/60 text-white text-sm ring-1 ring-white/30 focus:outline-none focus:ring-white/60"
       />
@@ -90,11 +114,16 @@ const WaitlistForm = () => {
         <Send className="w-4 h-4" />
       </button>
 
-      <ReCAPTCHA
-        ref={recaptchaRef}
-        size="invisible"
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      />
+      {mounted &&
+        recaptchaReady &&
+        createPortal(
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          />,
+          document.body
+        )}
     </form>
   );
 };
