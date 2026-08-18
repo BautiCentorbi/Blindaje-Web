@@ -84,8 +84,9 @@ export async function POST(req) {
       }
     }
 
-    // Solo notificamos por mail a los interesados nuevos, para no
-    // generar ruido cada vez que alguien reintenta con el mismo email.
+    // Solo mandamos mails en el alta nueva: ni la notificación interna
+    // ni la confirmación al interesado deben repetirse en reintentos
+    // con el mismo email.
     if (!alreadyRegistered) {
       await resend.emails.send({
         from: "Blindaje Digital <noreply@blindaje.com.ar>",
@@ -94,6 +95,17 @@ export async function POST(req) {
         html: `
         <p>Un visitante del sitio quiere que le avisen cuando Blindaje Digital esté disponible.</p>
         <p><strong>Email:</strong> ${sanitize(email)}</p>
+      `,
+      });
+
+      await resend.emails.send({
+        from: "Blindaje Digital <noreply@blindaje.com.ar>",
+        to: email,
+        subject: "Te anotamos en la lista de Blindaje Digital",
+        html: `
+        <p>¡Gracias por tu interés en Blindaje Digital!</p>
+        <p>Quedaste anotado en nuestra lista de espera. Te vamos a avisar por este mismo email en cuanto la plataforma esté disponible.</p>
+        <p>— Equipo Blindaje</p>
       `,
       });
     }
