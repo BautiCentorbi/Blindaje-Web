@@ -38,8 +38,9 @@ const MainCarousell = () => {
                 src={images[activeImage].src}
                 alt={images[activeImage].description}
                 fill
+                sizes="(min-width: 1536px) 1400px, (min-width: 768px) 90vw, 100vw"
                 className="object-cover rounded-2xl"
-                priority
+                priority={activeImage === 0}
               />
             </Suspense>
           </motion.div>
