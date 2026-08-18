@@ -25,6 +25,7 @@ const navItems = [
     href: "/about",
     submenu: [
       { label: "Nuestra Historia", href: "/about#historia" },
+      { label: "Trayectoria", href: "/about#trayectoria" },
       { label: "¿Qué nos diferencia?", href: "/about#diferencia" },
       { label: "Nuestro enfoque", href: "/about#enfoque" },
     ],
