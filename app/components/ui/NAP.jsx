@@ -13,7 +13,9 @@ export default function NAP() {
       <div className="flex gap-4 items-center justify-center">
         <p>
           <a
-            href="tel:+54261XXXXXXX"
+            href="https://wa.me/5492613833783?text=Hola%2C%20quisiera%20consultar%20por%20servicios%20de%20seguridad%20en%20mi%20empresa"
+            target="_blank"
+            rel="noopener"
             itemProp="telephone"
             className="underline"
           >
@@ -32,11 +34,11 @@ export default function NAP() {
 
         <p>
           <a
-            href="mailto:contacto@blindaje.com.ar"
+            href="mailto:seguridad@blindaje.com.ar"
             itemProp="email"
             className="underline"
           >
-            contacto@blindaje.com.ar
+            seguridad@blindaje.com.ar
           </a>
         </p>
       </div>
