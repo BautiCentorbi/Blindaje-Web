@@ -42,6 +42,7 @@ export async function POST(req) {
     const apellido = formData.get("apellido");
     const email = formData.get("email");
     const telefono = formData.get("telefono");
+    const tipoCliente = formData.get("tipo_cliente");
     const asunto = formData.get("asunto");
     const mensaje = formData.get("mensaje");
 
@@ -60,6 +61,7 @@ export async function POST(req) {
       <p><strong>Nombre:</strong> ${sanitize(nombre)} ${sanitize(apellido)}</p>
       <p><strong>Email:</strong> ${sanitize(email)}</p>
       <p><strong>Teléfono:</strong> ${sanitize(telefono)}</p>
+      <p><strong>Tipo de cliente:</strong> ${sanitize(tipoCliente || "No especificado")}</p>
       <p><strong>Asunto:</strong> ${sanitize(asunto)}</p>
       <p><strong>Mensaje:</strong></p>
       <p>${sanitize(mensaje)}</p>

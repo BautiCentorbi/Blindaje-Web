@@ -1,23 +1,24 @@
 import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
-import ContactForm from "./components/ContactForm.jsx";
+import BudgetForm from "./components/BudgetForm.jsx";
 import { Linkedin, LinkedinIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Contacto",
+  title: "Contacto y Cotización",
   description:
-    "Contactá a Blindaje para solicitar presupuestos, asesoramiento en seguridad o información sobre nuestros servicios en Mendoza.",
+    "Contactá a Blindaje y solicitá tu presupuesto de seguridad privada en Mendoza: vigilancia, custodias, monitoreo de alarmas y CCTV adaptados a tus necesidades.",
   keywords: [
     "Contacto Blindaje",
+    "Cotización seguridad privada Mendoza",
     "Presupuesto seguridad",
     "Consultas Blindaje",
     "Blindaje Mendoza",
     "Contacto seguridad privada",
   ],
   openGraph: {
-    title: "Contacto | Blindaje",
+    title: "Contacto y Cotización | Blindaje",
     description:
-      "Ponete en contacto con Blindaje para soluciones de seguridad personalizadas en Mendoza.",
+      "Ponete en contacto con Blindaje y pedí tu presupuesto de seguridad privada personalizado en Mendoza.",
     url: "https://blindaje.com.ar/contact",
     siteName: "Blindaje",
     images: [
@@ -33,17 +34,21 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contacto | Blindaje",
+    title: "Contacto y Cotización | Blindaje",
     description:
-      "Comunicate con nuestro equipo de expertos en seguridad privada.",
+      "Comunicate con nuestro equipo de expertos en seguridad privada y solicitá tu presupuesto.",
     images: ["/twitter-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 export default function Contact() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 md:px-18 lg:px-24 xl:48 md:py-12">
-      <ContactForm />
+      <BudgetForm />
       <article className="flex flex-col pb-12 md:py-12 2xl:py-28 mx-6 gap-6 md:gap-4 2xl:gap-6">
         <h1 className="text-center text-3xl md:text-4xl 2xl:text-5xl font-extrabold mb-2 md:mb-6">
           Contactanos

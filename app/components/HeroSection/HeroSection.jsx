@@ -79,7 +79,7 @@ const Hero = () => {
             este concepto. Somos <span className="font-extrabold">Blindaje</span>, Empresa de Seguridad Privada en Mendoza.
           </motion.p>
           <div className="flex flex-col md:flex-row gap-4 my-6 transition">
-            <Link aria-label="Solicitá una cotización" href={"/cotizaciones"}>
+            <Link aria-label="Solicitá una cotización" href={"/contact"}>
               <MainButton
                 ariaLabel="Solicitá una cotización"
                 label="Solicitá una cotización"
