@@ -1,5 +1,7 @@
 import React from 'react'
 import MainSection from './components/MainSection'
+import SegmentationSection from './components/SegmentationSection'
+import FaqSection from './components/FaqSection'
 import { Abril_Fatface } from "next/font/google";
 
 const AbrilFatface = Abril_Fatface({ subsets: ["latin"], weight: "400" });
@@ -54,6 +56,8 @@ const ServicesPage = () => {
           </span>
       </h1>
       <MainSection />
+      <SegmentationSection />
+      <FaqSection />
     </main>
   )
 }
