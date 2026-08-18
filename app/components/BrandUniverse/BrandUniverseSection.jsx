@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HeartPulse, ArrowUpRight } from "lucide-react";
+import WaitlistForm from "./WaitlistForm";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 16 },
@@ -130,6 +131,8 @@ export default function BrandUniverseSection() {
                   Visitar sitio
                 </span>
               )}
+
+              {isSoon && <WaitlistForm />}
             </motion.div>
           );
 
