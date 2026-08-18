@@ -34,5 +34,10 @@ export const images = [
         description: 'Nuestro equipo de seguridad privada de Blindaje, realizando el servicio de vigilancia y control de acceso. Evento de Max Carrá en Black Jagger Club, con una concurrencia de 1100 personas.',
         src: '/images/carousel/slide7.webp'
     },
+    {
+        id: 8,
+        description: 'Equipo de Blindaje en el interior de Black Jagger Club, durante una fecha donde concurrieron 780 personas.',
+        src: '/images/carousel/slide8.webp'
+    },
 
 ]
