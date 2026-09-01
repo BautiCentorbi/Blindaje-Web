@@ -26,7 +26,7 @@ export default function ClientMarquee() {
   },
   {
     src: "/logos/Logo-AMO.webp",
-    alt: "Logo de Asociación Mendocina de Oftalmología.",
+    alt: "Logo de la Asociación Mendocina de Oftalmología.",
     classname: "h-30 w-90 lg:h-40 lg:w-120"
   },
   {
@@ -47,7 +47,7 @@ export default function ClientMarquee() {
 
 ];
 
-  const speedSeconds = 28; // podés cambiar velocidad (más alto = más lento)
+  const speedSeconds = 50; // podés cambiar velocidad (más alto = más lento)
   const gradientWidth = "w-16 md:w-24 lg:w-32";
 
   // duplicamos para loop perfecto
