@@ -26,7 +26,7 @@ export default function ClientMarquee() {
   },
   {
     src: "/logos/Logo-AMO.webp",
-    alt: "Logo de Asociación Mendocina de Oftalmología.",
+    alt: "Logo de la Asociación Mendocina de Oftalmología.",
     classname: "h-30 w-90 lg:h-40 lg:w-120"
   },
   {
