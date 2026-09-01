@@ -47,7 +47,7 @@ export default function ClientMarquee() {
 
 ];
 
-  const speedSeconds = 28; // podés cambiar velocidad (más alto = más lento)
+  const speedSeconds = 50; // podés cambiar velocidad (más alto = más lento)
   const gradientWidth = "w-16 md:w-24 lg:w-32";
 
   // duplicamos para loop perfecto
