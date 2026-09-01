@@ -28,7 +28,23 @@ export default function ClientMarquee() {
     src: "/logos/Logo-AMO.webp",
     alt: "Logo de Asociación Mendocina de Oftalmología.",
     classname: "h-30 w-90 lg:h-40 lg:w-120"
+  },
+  {
+    src: "/logos/Logo-BlackJagger.webp",
+    alt: "Logo de Black Jagger Club, un espacio de entretenimiento nocturno en Mendoza.",
+    classname: "h-30 w-90 lg:h-40 lg:w-120"
+  },
+  {
+    src: "/logos/Logo-WIP.webp",
+    alt: "Logo de WIP, una productora de eventos en Mendoza.",
+    classname: "h-30 w-90 lg:h-40 lg:w-120"
+  },
+  {
+    src: "/logos/Logo-ELROBLE.webp",
+    alt: "Logo de El Roble Wake Complex, un complejo donde se realizan actividades acuáticas y recreativas en Mendoza. Así como diversión de tarde y noche. Sumado a eventos masivos varios.",
+    classname: "h-30 w-90 lg:h-40 lg:w-120"
   }
+
 ];
 
   const speedSeconds = 28; // podés cambiar velocidad (más alto = más lento)
